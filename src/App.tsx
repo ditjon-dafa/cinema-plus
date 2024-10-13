@@ -7,6 +7,8 @@ import { GlobalContext } from "./context/GlobalContext";
 import { ThemeType } from "./types";
 
 import HomePage from "./pages/HomePage";
+import Favorites from "./pages/Favorites";
+import SingleMovie from "./components/single-movie/SingleMovie";
 
 function App() {
   const router = createBrowserRouter([
@@ -14,14 +16,14 @@ function App() {
       path: "/",
       element: <HomePage />,
     },
-    // {
-    //   path: "movie/:id",
-    //   element: <SingleMovie />,
-    // },
-    // {
-    //   path: '/favorites',
-    //   element: <Favorites />,
-    // },
+    {
+      path: "/favorites",
+      element: <Favorites />,
+    },
+    {
+      path: "movie/:id", //it needs api(movie id) to receive a single movie
+      element: <SingleMovie />,
+    },
   ]);
 
   const [theme, setTheme] = useState<ThemeType>("dark");
