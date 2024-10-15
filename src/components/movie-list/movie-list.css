@@ -1,0 +1,13 @@
+.movie-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  grid-gap: 24px;
+  padding: 24px;
+}
+
+@media screen and (max-width: 500px) {
+  .movie-list {
+    grid-template-columns: 1fr;
+  }
+}
