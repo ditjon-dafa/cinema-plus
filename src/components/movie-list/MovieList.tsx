@@ -1,9 +1,23 @@
 import { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalContext";
-import MovieCard from "./components/MovieCard";
+import MovieCard from "./components/movie-card/MovieCard";
 import "./movie-list.css";
+import useFetch from "../../hooks/useFetch";
+import Loading from "../common/Loading";
+import Error from "../common/Error";
+
 export default function MovieList() {
   const { theme } = useContext(GlobalContext);
+
+  const { data: movies, loading, error } = useFetch();
+
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <Error />;
+  }
 
   return (
     <div
@@ -12,14 +26,21 @@ export default function MovieList() {
       }}
       className="movie-list"
     >
-      {/* {
-            movies.map((movie) => {
-              return <MovieCard rt_score={movie.rt_score} description={movie.description} id={movie.id} imageUrl={movie.movie_banner} title={movie.title} rating={movie.rt_score} key={movie.id} />
-            })
-          } */}
+      {movies.map((movie) => {
+        return (
+          <MovieCard
+            backdrop_path={movie.backdrop_path}
+            vote_average={movie.vote_average}
+            title={movie.title}
+            id={movie.id}
+            key={movie.id}
+          />
+        );
+      })}
+
+      {/* <MovieCard />
       <MovieCard />
-      <MovieCard />
-      <MovieCard />
+      <MovieCard /> */}
     </div>
   );
 }
