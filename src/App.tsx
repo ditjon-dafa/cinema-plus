@@ -8,7 +8,7 @@ import { ThemeType } from "./types";
 
 import HomePage from "./pages/HomePage";
 import Favorites from "./pages/Favorites";
-import SingleMovie from "./components/single-movie/SingleMovie";
+import SingleMovie from "./pages/SingleMovie";
 
 function App() {
   const router = createBrowserRouter([

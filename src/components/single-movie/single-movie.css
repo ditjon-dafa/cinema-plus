@@ -1,0 +1,11 @@
+.single-movie-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 24px;
+}
+
+@media screen and (max-width: 500px) {
+  .single-movie-header {
+    grid-template-columns: 1fr;
+  }
+}

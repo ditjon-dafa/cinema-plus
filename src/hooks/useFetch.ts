@@ -14,7 +14,7 @@ function useFetch() {
       "https://api.themoviedb.org/3/movie/top_rated?api_key=1d1d8844ae1e746c459e7be85c15c840";
     try {
       const { data } = await axios.get(url);
-      setData(data);
+      setData(data.results);
       setLoading(false);
     } catch (error) {
       setError(true);

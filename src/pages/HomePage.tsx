@@ -7,7 +7,7 @@ export default function HomePage() {
       <Header />
       <MovieList />
       {/* <BasicInfo />
-        <MovieList />
+      
         <AdditionalInfo />
         <Footer /> */}
     </>
