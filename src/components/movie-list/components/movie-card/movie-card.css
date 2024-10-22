@@ -8,14 +8,17 @@
   object-fit: cover;
 }
 
+.movie-card:hover {
+  cursor: pointer;
+}
 .movie-card h3 {
-  background-color: blue;
+  background-color: rgb(32, 31, 31);
   color: white;
   padding: 6px;
 }
 
 .movie-card p {
-  background-color: blue;
+  background-color: rgb(32, 31, 31);
   color: white;
   padding: 6px;
 }

@@ -45,5 +45,7 @@ header a:hover {
 }
 
 .menu-item.active {
-  color: blue !important;
+  /* color: blue !important; */
+  color: inherit;
+  border-bottom: 5px solid orange;
 }

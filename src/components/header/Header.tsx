@@ -1,15 +1,12 @@
-import { Switch } from "antd"; //OK
+import { Switch } from "antd";
 import "./header.css";
-import { MoonOutlined, SunOutlined } from "@ant-design/icons"; //OK
-// import SearchBar from "./components/SearchBar";
-import { Link, useLocation } from "react-router-dom"; //OK
-// import { useNavigate, Link } from "react-router-dom"; //OK
-import { useContext } from "react"; //OK
-import { GlobalContext } from "../../context/GlobalContext"; //OK
+import { MoonOutlined, SunOutlined } from "@ant-design/icons";
+import { Link, useLocation } from "react-router-dom";
+import { useContext } from "react";
+import { GlobalContext } from "../../context/GlobalContext";
 import SearchBar from "./components/SearchBar";
 
 export default function Header() {
-  //   const nav = useNavigate();
   const { theme, setTheme } = useContext(GlobalContext);
   const location = useLocation();
 
@@ -36,11 +33,6 @@ export default function Header() {
         color: theme === "light" ? "black" : "white",
       }}
     >
-      {/* <img
-        onClick={() => nav("/")}
-        src={theme === "light" ? "/anime-logo.png" : "/logo-dark.jpg"}
-        alt="anime logo"
-      /> */}
       <nav>
         <ul>
           {navItems.map((item) => {
@@ -78,11 +70,4 @@ export default function Header() {
       </div>
     </header>
   );
-  //   return (
-  //
-  //     // logo
-  //     //Movie search
-  //     //Home page link
-  //     //Favorites link
-  //   );
 }
