@@ -2,9 +2,9 @@
 // import viteLogo from '/vite.svg'
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { GlobalContext } from "./context/GlobalContext";
-import { ThemeType } from "./types";
+import { FavoritesType, LikeType, ThemeType } from "./types";
 
 import HomePage from "./pages/HomePage";
 import Favorites from "./pages/Favorites";
@@ -27,9 +27,17 @@ function App() {
   ]);
 
   const [theme, setTheme] = useState<ThemeType>("dark");
+  const [favorites, setFavorites] = useState<FavoritesType>([]);
+  const [isLiked, setIsLiked] = useState<LikeType>(false);
+
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
 
   return (
-    <GlobalContext.Provider value={{ theme, setTheme }}>
+    <GlobalContext.Provider
+      value={{ theme, setTheme, favorites, setFavorites, isLiked, setIsLiked }}
+    >
       <RouterProvider router={router} />
     </GlobalContext.Provider>
   );

@@ -11,6 +11,11 @@
 .movie-card:hover {
   cursor: pointer;
 }
+
+.heart {
+  background-color: rgb(32, 31, 31);
+  font-size: 150%;
+}
 .movie-card h3 {
   background-color: rgb(32, 31, 31);
   color: white;

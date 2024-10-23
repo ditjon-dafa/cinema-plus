@@ -1,23 +1,10 @@
 import { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalContext";
-import MovieCard from "./components/movie-card/MovieCard";
-import "./movie-list.css";
-import useFetch from "../../hooks/useFetch";
-import Loading from "../common/Loading";
-import Error from "../common/Error";
+import MovieCard from "../movie-list/components/movie-card/MovieCard";
 
-export default function MovieList() {
+export default function FavoritesMovieList() {
   const { theme } = useContext(GlobalContext);
-
-  const { data: movies, loading, error } = useFetch();
-
-  if (loading) {
-    return <Loading />;
-  }
-
-  if (error) {
-    return <Error />;
-  }
+  const { favorites, setFavorites } = useContext(GlobalContext);
 
   return (
     <div
@@ -26,7 +13,7 @@ export default function MovieList() {
       }}
       className="movie-list"
     >
-      {movies.map((movie) => {
+      {favorites.map((movie) => {
         return (
           <MovieCard
             adult={movie.adult}

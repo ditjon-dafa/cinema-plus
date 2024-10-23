@@ -1,14 +1,20 @@
 import { createContext } from "react";
-import { ThemeType } from "../types";
-// import { LocalesType, ThemeType } from "../types";
+// import { ThemeType, FavoritesType } from "../types";
+import { ThemeType, FavoritesType, LikeType } from "../types";
 
 const defaultValue: {
   theme: ThemeType;
   setTheme: React.Dispatch<React.SetStateAction<ThemeType>>;
-  //   locale?: LocalesType;
-  //   setLocale?: React.Dispatch<React.SetStateAction<LocalesType>>;
+  isLiked: LikeType;
+  setIsLiked: React.Dispatch<React.SetStateAction<LikeType>>;
+  favorites: FavoritesType;
+  setFavorites: React.Dispatch<React.SetStateAction<FavoritesType>>;
 } = {
   theme: "light",
   setTheme: () => {},
+  isLiked: false,
+  setIsLiked: () => {},
+  favorites: [],
+  setFavorites: () => {},
 };
 export const GlobalContext = createContext(defaultValue);
