@@ -4,13 +4,12 @@ export type LikeType = true | false;
 
 export type FavoritesType = Array<MovieType> | [];
 
-// export type LocalesType = "en" | "fr" | "sq";
-
 export type MovieType = {
   adult: boolean;
   backdrop_path: string;
   genre_ids: Array<number>;
   id: number;
+  favorite: boolean;
   original_language: string;
   original_title: string;
   overview: string;
@@ -28,7 +27,6 @@ export type SingleMovieType = {
   backdrop_path: string;
   belongs_to_collection: object;
   budget: number;
-  // genres: Array<object>;
   genres: Array<SingleMovieGenres>;
   homepage: string;
   id: number;
@@ -40,7 +38,6 @@ export type SingleMovieType = {
   popularity: number;
   poster_path: string;
   production_companies: Array<object>;
-  // release_date: Date;
   release_date: string;
   revenue: number;
   runtime: number;

@@ -30,6 +30,7 @@ export default function FavoritesMovieList() {
             video={movie.video}
             vote_average={movie.vote_average}
             vote_count={movie.vote_count}
+            favorite={movie.favorite}
             key={movie.id}
           />
         );
