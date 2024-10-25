@@ -14,6 +14,7 @@ import {
 import HomePage from "./pages/HomePage";
 import Favorites from "./pages/Favorites";
 import SingleMovie from "./pages/SingleMovie";
+import SearchMovie from "./pages/SearchMovie";
 
 function App() {
   const router = createBrowserRouter([
@@ -28,6 +29,11 @@ function App() {
     {
       path: "movie/:id", //it needs api(movie id) to receive a single movie
       element: <SingleMovie />,
+    },
+
+    {
+      path: "/search",
+      element: <SearchMovie />,
     },
   ]);
 

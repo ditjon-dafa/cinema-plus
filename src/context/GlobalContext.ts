@@ -1,6 +1,6 @@
 import { createContext } from "react";
 // import { ThemeType, FavoritesType } from "../types";
-import { ThemeType, FavoritesType, LikeType } from "../types";
+import { ThemeType, FavoritesType, LikeType, SearchMovieType } from "../types";
 
 const defaultValue: {
   theme: ThemeType;
@@ -9,6 +9,8 @@ const defaultValue: {
   setIsLiked: React.Dispatch<React.SetStateAction<LikeType>>;
   favorites: FavoritesType;
   setFavorites: React.Dispatch<React.SetStateAction<FavoritesType>>;
+  searchMovie: SearchMovieType;
+  setSearchMovie: React.Dispatch<React.SetStateAction<SearchMovieType>>;
 } = {
   theme: "light",
   setTheme: () => {},
@@ -16,5 +18,7 @@ const defaultValue: {
   setIsLiked: () => {},
   favorites: [],
   setFavorites: () => {},
+  searchMovie: [],
+  setSearchMovie: () => {},
 };
 export const GlobalContext = createContext(defaultValue);

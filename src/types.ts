@@ -4,6 +4,8 @@ export type LikeType = true | false;
 
 export type FavoritesType = Array<MovieType> | [];
 
+export type SearchMovieType = Array<MovieType> | [];
+
 export type MovieType = {
   adult: boolean;
   backdrop_path: string;
@@ -15,7 +17,7 @@ export type MovieType = {
   overview: string;
   popularity: number;
   poster_path: string;
-  release_date: Date;
+  release_date: string;
   title: string;
   video: boolean;
   vote_average: number;
