@@ -7,20 +7,10 @@ import Loading from "../common/Loading";
 import Error from "../common/Error";
 import MoviePages from "../../MoviePages";
 
-// interface Props {
-//   moviePage: Pagination;
-// }
-
 export default function MovieList() {
   const { theme } = useContext(GlobalContext);
-  // const totalPages = 485;
   const { data: movies, loading, error } = useFetch();
-  // const isFavoriteMovie = false;
-  const { isLiked, setIsLiked } = useContext(GlobalContext);
 
-  const { favorites, setFavorites } = useContext(GlobalContext);
-
-  // setIsLiked(false);
   if (loading) {
     return <Loading />;
   }
@@ -54,14 +44,11 @@ export default function MovieList() {
               video={movie.video}
               vote_average={movie.vote_average}
               vote_count={movie.vote_count}
-              favorite={false}
               key={movie.id}
             />
           );
         })}
-        {/* {updatedMoviesList.length === 0 ? (
-          <p> Sorry, your search doesn't match any movies!</p>
-        ) : null} */}
+
         {/* <Pagination align="center" /> */}
         {/* <Pagination
           align="center"

@@ -1,5 +1,3 @@
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -22,7 +20,7 @@ function App() {
       element: <Favorites />,
     },
     {
-      path: "movie/:id", //it needs api(movie id) to receive a single movie
+      path: "movie/:id",
       element: <SingleMovie />,
     },
 
@@ -31,9 +29,13 @@ function App() {
       element: <SearchMovie />,
     },
   ]);
+  const favoritesFromLocalStorage =
+    JSON.parse(localStorage.getItem("favorites") || "") || [];
 
   const [theme, setTheme] = useState<ThemeType>("dark");
-  const [favorites, setFavorites] = useState<FavoritesType>([]);
+  const [favorites, setFavorites] = useState<FavoritesType>(
+    favoritesFromLocalStorage
+  );
   const [isLiked, setIsLiked] = useState<LikeType>(false);
   const [searchMovie, setSearchMovie] = useState<SearchMovieType>([]);
 

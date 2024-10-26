@@ -11,7 +11,6 @@ export type MovieType = {
   backdrop_path: string;
   genre_ids: Array<number>;
   id: number;
-  favorite: boolean;
   original_language: string;
   original_title: string;
   overview: string;
