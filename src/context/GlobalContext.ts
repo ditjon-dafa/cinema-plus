@@ -12,8 +12,8 @@ const defaultValue: {
   searchMovie: SearchMovieType;
   setSearchMovie: React.Dispatch<React.SetStateAction<SearchMovieType>>;
 } = {
-  theme: "light",
-  setTheme: () => {},
+  theme: "dark", // is overided in App.tsx:  const [theme, setTheme] = useState<ThemeType>("dark");
+  setTheme: () => {}, //
   isLiked: false,
   setIsLiked: () => {},
   favorites: [],

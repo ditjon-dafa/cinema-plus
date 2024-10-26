@@ -10,9 +10,7 @@ function SingleMovie() {
     id: string;
   };
 
-  // const idAsNumber = parseInt(params.id);
-  // const { data, loading, error } = useSingleMovieFetch(idAsNumber);
-  const { data, loading, error } = useSingleMovieFetch(params.id);
+  const { data, loading, error } = useSingleMovieFetch(params.id); //calling dynamically a movie with an id
 
   if (loading) {
     return <Loading />;

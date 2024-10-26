@@ -8,12 +8,5 @@ export default function Favorites() {
       <Header />
       <FavoritesMovieList />
     </>
-    //   <div
-    //     style={{
-    //       backgroundColor: theme === "light" ? "white" : "black",
-    //     }}
-    //     className="movie-list"
-    //   ></div>
-    // </div>
   );
 }

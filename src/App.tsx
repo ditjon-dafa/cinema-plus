@@ -20,7 +20,7 @@ function App() {
       element: <Favorites />,
     },
     {
-      path: "movie/:id",
+      path: "movie/:id", //calling dynamically a movie with an id
       element: <SingleMovie />,
     },
 
