@@ -10,7 +10,9 @@ export function convertDurationToHoursAndMinutes(duration: number) {
 }
 
 export function getRatingFixed(rating: number) {
+  if (!rating) return 5;
   const ratingFixedString = rating.toFixed(1);
+
   const ratingFixedNumber = parseFloat(ratingFixedString);
 
   return ratingFixedNumber;

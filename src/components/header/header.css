@@ -28,6 +28,11 @@ header input {
   border-radius: 30px;
 }
 
+header button {
+  background-color: orange;
+  padding: 12px 24px;
+  border-radius: 30px;
+}
 /* header a {
   text-decoration: none;
   color: black;

@@ -4,7 +4,7 @@ import { getRatingFixed } from "../../../../utils";
 import { HeartFilled, HeartOutlined, StarFilled } from "@ant-design/icons";
 import { useContext } from "react";
 import { GlobalContext } from "../../../../context/GlobalContext";
-
+import img from "../../../../images/img.png";
 interface Props {
   adult: boolean;
   backdrop_path: string;
@@ -30,8 +30,6 @@ export default function MovieCard(props: Props) {
   const nav = useNavigate();
 
   const { favorites, setFavorites } = useContext(GlobalContext);
-
-  const { isLiked, setIsLiked } = useContext(GlobalContext);
 
   function handleSingleMovieNavigation() {
     nav(`/movie/${props.id}`);
@@ -95,7 +93,12 @@ export default function MovieCard(props: Props) {
         )} */}
       </div>
       <article onClick={handleSingleMovieNavigation} className="movie-card">
-        <img src={baseUrl + props.backdrop_path} alt="" />
+        <img
+          src={
+            props.backdrop_path == null ? img : baseUrl + props.backdrop_path
+          }
+          alt=""
+        />
 
         <p>
           <span style={{ color: "yellow" }}>

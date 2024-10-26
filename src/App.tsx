@@ -4,12 +4,7 @@ import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { GlobalContext } from "./context/GlobalContext";
-import {
-  FavoritesType,
-  LikeType,
-  ThemeType,
-  FilteredMoviesList,
-} from "./types";
+import { FavoritesType, LikeType, ThemeType, SearchMovieType } from "./types";
 
 import HomePage from "./pages/HomePage";
 import Favorites from "./pages/Favorites";
@@ -40,8 +35,7 @@ function App() {
   const [theme, setTheme] = useState<ThemeType>("dark");
   const [favorites, setFavorites] = useState<FavoritesType>([]);
   const [isLiked, setIsLiked] = useState<LikeType>(false);
-  const [filteredMovieList, setFilteredMovieList] =
-    useState<FilteredMoviesList>([]);
+  const [searchMovie, setSearchMovie] = useState<SearchMovieType>([]);
 
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
@@ -54,10 +48,10 @@ function App() {
         setTheme,
         favorites,
         setFavorites,
-        filteredMovieList,
-        setFilteredMovieList,
         isLiked,
         setIsLiked,
+        searchMovie,
+        setSearchMovie,
       }}
     >
       <RouterProvider router={router} />
