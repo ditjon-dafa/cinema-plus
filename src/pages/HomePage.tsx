@@ -8,10 +8,7 @@ export default function HomePage() {
       <Header />
       <BasicInfo />
       <MovieList />
-      {/* <BasicInfo />
       
-        <AdditionalInfo />
-        <Footer /> */}
     </>
   );
 }

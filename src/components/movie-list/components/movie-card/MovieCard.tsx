@@ -4,7 +4,8 @@ import { getRatingFixed } from "../../../../utils";
 import { HeartFilled, HeartOutlined, StarFilled } from "@ant-design/icons";
 import { useContext } from "react";
 import { GlobalContext } from "../../../../context/GlobalContext";
-import img from "../../../../images/img.png";
+import img from "../../../../images/no-image-data.png";
+
 interface Props {
   adult: boolean;
   backdrop_path: string;

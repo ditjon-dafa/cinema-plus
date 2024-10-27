@@ -1,5 +1,4 @@
 export function convertDurationToHoursAndMinutes(duration: number) {
-  // const durationAsNumber = parseInt(duration);
   const hours = Math.floor(duration / 60);
   const minutes = duration % 60;
 
@@ -10,7 +9,7 @@ export function convertDurationToHoursAndMinutes(duration: number) {
 }
 
 export function getRatingFixed(rating: number) {
-  if (!rating) return 5;
+  if (!rating) return 0;
   const ratingFixedString = rating.toFixed(1);
 
   const ratingFixedNumber = parseFloat(ratingFixedString);

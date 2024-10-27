@@ -3,8 +3,10 @@
 }
 
 .movie-card img {
+  /* max-width: 100%;
+  max-height: 300px; */
   max-width: 100%;
-  max-height: 300px;
+  max-height: 281px;
   object-fit: cover;
 }
 

@@ -1,7 +1,5 @@
 export type ThemeType = "light" | "dark";
 
-export type LikeType = true | false;
-
 export type FavoritesType = Array<MovieType> | [];
 
 export type SearchMovieType = Array<MovieType> | [];

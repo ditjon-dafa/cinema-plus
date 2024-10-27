@@ -8,6 +8,7 @@ const MoviePages: React.FC = () => (
       showTotal={(total) => `Total ${total} items`}
       defaultPageSize={20}
       defaultCurrent={1}
+      onChange={(current) => `Current ${current}`}
     />
   </>
 );
