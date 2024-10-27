@@ -6,6 +6,12 @@
   padding: 24px;
 }
 
+@media screen and (max-width: 1000px) {
+  .movie-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .movie-list {
     grid-template-columns: 1fr;

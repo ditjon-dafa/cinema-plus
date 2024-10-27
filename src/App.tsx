@@ -2,7 +2,7 @@ import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { GlobalContext } from "./context/GlobalContext";
-import { FavoritesType, LikeType, ThemeType, SearchMovieType } from "./types";
+import { FavoritesType, ThemeType, SearchMovieType } from "./types";
 
 import HomePage from "./pages/HomePage";
 import Favorites from "./pages/Favorites";
@@ -36,7 +36,7 @@ function App() {
   const [favorites, setFavorites] = useState<FavoritesType>(
     favoritesFromLocalStorage
   );
-  const [isLiked, setIsLiked] = useState<LikeType>(false);
+
   const [searchMovie, setSearchMovie] = useState<SearchMovieType>([]);
 
   useEffect(() => {
@@ -50,8 +50,6 @@ function App() {
         setTheme,
         favorites,
         setFavorites,
-        isLiked,
-        setIsLiked,
         searchMovie,
         setSearchMovie,
       }}
