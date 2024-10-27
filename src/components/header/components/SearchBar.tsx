@@ -10,7 +10,7 @@ import Error from "../../common/Error";
 export default function SearchBar() {
   const nav = useNavigate();
   const [query, setQuery] = useState<string>("");
-  const { searchMovie, setSearchMovie } = useContext(GlobalContext);
+  const { setSearchMovie } = useContext(GlobalContext);
   const { data: movies, loading, error } = useSearchMovieFetch(query);
 
   if (loading) {

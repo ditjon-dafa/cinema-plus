@@ -5,7 +5,7 @@ import FeedbackSearchMovie from "../../feedback-to-user/FeedbackSearchMovie";
 
 export default function SearchMovieList() {
   const { theme } = useContext(GlobalContext);
-  const { searchMovie, setSearchMovie } = useContext(GlobalContext);
+  const { searchMovie } = useContext(GlobalContext);
 
   return (
     <>

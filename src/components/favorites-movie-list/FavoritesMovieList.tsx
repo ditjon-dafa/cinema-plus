@@ -5,7 +5,7 @@ import FeedbackFavorites from "../../feedback-to-user/FeedbackFavorites";
 
 export default function FavoritesMovieList() {
   const { theme } = useContext(GlobalContext);
-  const { favorites, setFavorites } = useContext(GlobalContext);
+  const { favorites } = useContext(GlobalContext);
 
   return (
     <>
