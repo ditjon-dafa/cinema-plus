@@ -16,7 +16,7 @@ export default function SingleMovieCard(props: Props) {
   const duration = convertDurationToHoursAndMinutes(props.movie.runtime);
   const rating = getRatingFixed(props.movie.vote_average);
 
-  let movieGenres = props.movie.genres;
+  const movieGenres = props.movie.genres;
 
   return (
     <div

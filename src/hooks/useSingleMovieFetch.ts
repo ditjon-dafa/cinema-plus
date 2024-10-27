@@ -19,6 +19,7 @@ function useSingleMovieFetch(id: string) {
     } catch (error) {
       setError(true);
       setLoading(false);
+      console.log(error);
     }
   }
 

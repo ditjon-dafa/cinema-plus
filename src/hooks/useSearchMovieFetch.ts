@@ -7,7 +7,7 @@ function useSearchMovieFetch(query: string) {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  let queryArr = query.split(" ");
+  const queryArr = query.split(" ");
   let queryStr = "";
   if (queryArr.length >= 2) queryStr = queryArr.join("%20");
   else queryStr = query;
