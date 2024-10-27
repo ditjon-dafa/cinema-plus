@@ -29,8 +29,16 @@ function App() {
       element: <SearchMovie />,
     },
   ]);
-  const favoritesFromLocalStorage =
-    JSON.parse(localStorage.getItem("favorites") || "") || [];
+
+  const favoritesFromLocalStorage = (() => {
+    const storedFavorites = localStorage.getItem("favorites");
+    try {
+      return storedFavorites ? JSON.parse(storedFavorites) : [];
+    } catch (error) {
+      console.error("Error parsing favorites from localStorage:", error);
+      return [];
+    }
+  })();
 
   const [theme, setTheme] = useState<ThemeType>("dark");
   const [favorites, setFavorites] = useState<FavoritesType>(
