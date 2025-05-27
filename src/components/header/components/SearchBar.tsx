@@ -6,6 +6,7 @@ import { GlobalContext } from "../../../context/GlobalContext";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../common/Loading";
 import Error from "../../common/Error";
+import "./search-bar.css";
 
 export default function SearchBar() {
   const nav = useNavigate();

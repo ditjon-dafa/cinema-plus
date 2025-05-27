@@ -39,6 +39,9 @@ function App() {
       return [];
     }
   })();
+  //getting favorites movies for the first time results in an empty array
+  //when there is a movie in favorites(from local storage), at least an object
+  //of "MovieType" type will be in constant "favorites"
 
   const [theme, setTheme] = useState<ThemeType>("dark");
   const [favorites, setFavorites] = useState<FavoritesType>(

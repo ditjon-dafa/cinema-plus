@@ -29,33 +29,42 @@ export default function Header() {
   return (
     <header
       style={{
-        backgroundColor: theme === "light" ? "white" : "black",
+        backgroundColor: theme === "light" ? "antiquewhite" : "gray",
         color: theme === "light" ? "black" : "white",
       }}
     >
-      <nav>
-        <ul>
-          {navItems.map((item) => {
-            return (
-              <li key={item.path}>
-                <Link
-                  style={linkStyles}
-                  to={item.path}
-                  className={
-                    item.path === location.pathname
-                      ? "menu-item active"
-                      : "menu-item"
-                  }
-                >
-                  {item.label}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
-      <SearchBar />
-      <div>
+      <div id="cinema-name">
+        <h1 style={{ color: "orange" }}> Cinema + </h1>
+      </div>
+
+      <div id="menu">
+        <nav>
+          <ul>
+            {navItems.map((item) => {
+              return (
+                <li key={item.path}>
+                  <Link
+                    style={linkStyles}
+                    to={item.path}
+                    className={
+                      item.path === location.pathname
+                        ? "menu-item active"
+                        : "menu-item"
+                    }
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </div>
+
+      <div id="search">
+        <SearchBar />
+      </div>
+      <div id="theme">
         <Switch
           onChange={(checked) => {
             if (checked) {

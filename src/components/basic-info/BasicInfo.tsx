@@ -13,8 +13,7 @@ export default function BasicInfo() {
       }}
       className="intro"
     >
-      <h1 style={{ color: "orange" }}> Cinema + </h1>
-      <h3> Discover our top rated movies!</h3>
+      <h1> Discover our top rated movies!</h1>
     </div>
   );
 }
