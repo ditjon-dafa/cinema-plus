@@ -26,7 +26,8 @@ export default function MovieList() {
     <>
       <div
         style={{
-          backgroundColor: theme === "light" ? "white" : "black",
+          backgroundColor:
+            theme === "light" ? "rgb(200, 200, 200)" : "rgb(100, 100, 100)",
         }}
         className="movie-list"
       >

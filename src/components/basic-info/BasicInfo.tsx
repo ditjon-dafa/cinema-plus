@@ -8,7 +8,8 @@ export default function BasicInfo() {
   return (
     <div
       style={{
-        backgroundColor: theme === "light" ? "white" : "black",
+        backgroundColor:
+          theme === "light" ? "rgb(200, 200, 200)" : "rgb(100, 100, 100)",
         color: theme === "light" ? "black" : "white",
       }}
       className="intro"

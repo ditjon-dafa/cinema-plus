@@ -26,6 +26,7 @@ interface Props {
 const baseUrl = "https://image.tmdb.org/t/p/w500/";
 
 export default function MovieCard(props: Props) {
+  const { theme } = useContext(GlobalContext);
   const rating = getRatingFixed(props.vote_average);
   const nav = useNavigate();
 
@@ -50,7 +51,14 @@ export default function MovieCard(props: Props) {
   }
 
   return (
-    <div>
+    <div
+      className="card-background"
+      style={{
+        backgroundColor:
+          theme === "light" ? "rgb(160, 160, 160)" : "rgb(70, 70, 70)",
+        color: theme === "light" ? "black" : "white",
+      }}
+    >
       <div className="heart" style={{ color: "red" }}>
         {isMovieFavorite ? (
           <HeartFilled onClick={handleUnFavoriteMovie} />

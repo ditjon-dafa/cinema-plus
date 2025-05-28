@@ -29,7 +29,8 @@ export default function Header() {
   return (
     <header
       style={{
-        backgroundColor: theme === "light" ? "antiquewhite" : "gray",
+        backgroundColor:
+          theme === "light" ? "rgb(160, 160, 160)" : "rgb(70, 70, 70)",
         color: theme === "light" ? "black" : "white",
       }}
     >
