@@ -20,9 +20,11 @@ export default function SingleMovieCard(props: Props) {
 
   return (
     <div
+      className="single-movie-content"
       style={{
         padding: 24,
-        backgroundColor: theme === "light" ? "white" : "rgb(32, 31, 31)",
+        backgroundColor:
+          theme === "light" ? "rgb(170, 170, 170)" : "rgb(80, 80, 80)",
         color: theme === "light" ? "black" : "white",
       }}
     >
@@ -52,7 +54,11 @@ export default function SingleMovieCard(props: Props) {
           >
             {" "}
             <span
-              style={{ color: "yellow", fontSize: "150%", marginRight: "8px" }}
+              style={{
+                color: "yellow",
+                fontSize: "150%",
+                marginRight: "8px",
+              }}
             >
               <StarFilled />
             </span>
@@ -65,6 +71,7 @@ export default function SingleMovieCard(props: Props) {
         style={{
           marginLeft: "auto",
           marginRight: "auto",
+          marginBottom: "24px",
         }}
         src={baseUrl + props.movie.backdrop_path}
         alt=""

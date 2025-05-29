@@ -1,4 +1,5 @@
 header {
+  max-height: 26vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   place-items: center;
@@ -22,6 +23,16 @@ header {
   grid-area: theme;
 }
 
+#cinema-name-heading {
+  color: orange;
+  text-decoration: none;
+}
+
+#cinema-name-heading:hover {
+  font-size: 120%;
+  transition: 0.5s;
+}
+
 header ul {
   list-style-type: none;
   display: flex;
@@ -31,8 +42,11 @@ header ul {
 
 .menu-item {
   text-decoration: none;
-  color: black;
   font-size: 1.3em;
+}
+
+.menu-item:hover {
+  border-bottom: 0.25em solid orange;
 }
 
 .menu-item.active {

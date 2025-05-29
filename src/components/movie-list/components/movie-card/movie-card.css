@@ -1,10 +1,6 @@
 .card-background {
-  padding: 5%;
+  padding: 3%;
 }
-
-/* .movie-card {
-  box-shadow: rgba(182, 182, 231, 0.2) 0px 7px 29px 0px;
-} */
 
 .movie-card img {
   max-width: 100%;

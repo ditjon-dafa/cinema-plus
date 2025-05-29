@@ -35,7 +35,13 @@ export default function Header() {
       }}
     >
       <div id="cinema-name">
-        <h1 style={{ color: "orange" }}> Cinema + </h1>
+        <h1>
+          {" "}
+          <Link to={navItems[0].path} id="cinema-name-heading">
+            {" "}
+            Cinema +{" "}
+          </Link>
+        </h1>
       </div>
 
       <div id="menu">
