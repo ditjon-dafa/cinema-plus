@@ -30,7 +30,7 @@ export default function Header() {
     <header
       style={{
         backgroundColor:
-          theme === "light" ? "rgb(160, 160, 160)" : "rgb(70, 70, 70)",
+          theme === "light" ? "rgb(225, 225, 225)" : "rgb(70, 70, 70)",
         color: theme === "light" ? "black" : "white",
       }}
     >
@@ -45,27 +45,23 @@ export default function Header() {
       </div>
 
       <div id="menu">
-        <nav>
-          <ul>
-            {navItems.map((item) => {
-              return (
-                <li key={item.path}>
-                  <Link
-                    style={linkStyles}
-                    to={item.path}
-                    className={
-                      item.path === location.pathname
-                        ? "menu-item active"
-                        : "menu-item"
-                    }
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+        {navItems.map((item) => {
+          return (
+            <div key={item.path} id="${item.label}">
+              <Link
+                style={linkStyles}
+                to={item.path}
+                className={
+                  item.path === location.pathname
+                    ? "menu-item active"
+                    : "menu-item"
+                }
+              >
+                {item.label}
+              </Link>
+            </div>
+          );
+        })}
       </div>
 
       <div id="search">

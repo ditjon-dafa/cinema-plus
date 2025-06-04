@@ -1,11 +1,11 @@
 header {
-  max-height: 26vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   place-items: center;
   gap: 1.5em;
   padding: 1em 0;
   grid-template-areas: "cinema-name menu search theme";
+  max-height: 22vh;
 }
 
 #cinema-name {
@@ -14,6 +14,10 @@ header {
 
 #menu {
   grid-area: menu;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  grid-template-areas: "Home My favorites";
 }
 
 #search {
@@ -21,6 +25,26 @@ header {
 }
 #theme {
   grid-area: theme;
+}
+
+@media screen and (max-width: 1000px) {
+  header {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "cinema-name search theme";
+    max-height: 34vh;
+  }
+
+  #menu {
+    grid-column: span 3;
+    gap: 1.5em;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  h1 {
+    font-size: 1.3em;
+  }
 }
 
 #cinema-name-heading {
@@ -31,13 +55,6 @@ header {
 #cinema-name-heading:hover {
   font-size: 120%;
   transition: 0.5s;
-}
-
-header ul {
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-  gap: 1.3em;
 }
 
 .menu-item {
@@ -53,24 +70,4 @@ header ul {
   color: inherit;
   font-weight: bold;
   border-bottom: 0.25em solid orange;
-}
-
-@media screen and (max-width: 800px) {
-  header {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    place-items: center;
-    gap: 1em;
-    padding: 1.5em 0;
-    grid-template-areas: "cinema-name search theme";
-  }
-
-  #menu {
-    grid-column: span 3;
-  }
-
-  h1 {
-    font-size: 1.3em;
-  }
 }

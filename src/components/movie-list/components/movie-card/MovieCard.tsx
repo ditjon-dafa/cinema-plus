@@ -32,7 +32,10 @@ export default function MovieCard(props: Props) {
 
   const { favorites, setFavorites } = useContext(GlobalContext);
   const isMovieFavorite = favorites.find((movie) => movie.id === props.id);
-  console.log("isMovie favorite: ", isMovieFavorite);
+
+  const starStyle = {
+    color: theme === "light" ? "rgb(202, 202, 0)" : "yellow",
+  };
 
   function handleSingleMovieNavigation() {
     nav(`/movie/${props.id}`);
@@ -55,7 +58,7 @@ export default function MovieCard(props: Props) {
       className="card-background"
       style={{
         backgroundColor:
-          theme === "light" ? "rgb(160, 160, 160)" : "rgb(70, 70, 70)",
+          theme === "light" ? "rgb(225, 225, 225)" : "rgb(70, 70, 70)",
         color: theme === "light" ? "black" : "white",
       }}
     >
@@ -75,7 +78,7 @@ export default function MovieCard(props: Props) {
         />
 
         <p>
-          <span style={{ color: "yellow" }}>
+          <span style={starStyle}>
             <StarFilled />
           </span>{" "}
           {rating}

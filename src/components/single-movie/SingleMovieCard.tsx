@@ -18,13 +18,19 @@ export default function SingleMovieCard(props: Props) {
 
   const movieGenres = props.movie.genres;
 
+  const starStyle = {
+    color: theme === "light" ? "rgb(202, 202, 0)" : "yellow",
+    fontSize: "150%",
+    marginRight: "8px",
+  };
+
   return (
     <div
       className="single-movie-content"
       style={{
         padding: 24,
         backgroundColor:
-          theme === "light" ? "rgb(170, 170, 170)" : "rgb(80, 80, 80)",
+          theme === "light" ? "rgb(240, 240, 240)" : "rgb(80, 80, 80)",
         color: theme === "light" ? "black" : "white",
       }}
     >
@@ -53,13 +59,7 @@ export default function SingleMovieCard(props: Props) {
             }}
           >
             {" "}
-            <span
-              style={{
-                color: "yellow",
-                fontSize: "150%",
-                marginRight: "8px",
-              }}
-            >
+            <span style={starStyle}>
               <StarFilled />
             </span>
             <b style={{ fontSize: "150%" }}>{rating}</b>/10

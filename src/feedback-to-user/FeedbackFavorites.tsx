@@ -1,29 +1,34 @@
 import React from "react";
 import { Result } from "antd";
+import { useContext } from "react";
+import { GlobalContext } from "../context/GlobalContext";
 
 const FeedbackFavorites: React.FC = () => {
+  const { theme } = useContext(GlobalContext);
   return (
     <div
       style={{
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor:
+          theme === "light" ? "rgb(240, 240, 240)" : "rgb(80, 80, 80)",
       }}
     >
       <Result
         status="404"
-        title="404"
+        title={
+          <p style={{ color: theme === "light" ? "black" : "white" }}>"404"</p>
+        }
         subTitle={
           <h1
             style={{
-              color: "black",
+              color: theme === "light" ? "black" : "white",
             }}
           >
-            Sorry, there are no favorites movies in the list.
+            Sorry, there are no favorites movies in the list!
           </h1>
         }
-
-        // extra={<Button type="primary">Back Home</Button>}
       />
     </div>
   );
