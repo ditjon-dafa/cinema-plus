@@ -34,8 +34,7 @@ export default function SearchBar() {
     nav("/search");
   }
 
-  const onSearch: SearchProps["onSearch"] = (value) => {
-    value = query;
+  const onSearch: SearchProps["onSearch"] = () => {
     searchForMovie();
   };
   return (
