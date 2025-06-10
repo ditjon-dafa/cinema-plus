@@ -6,6 +6,10 @@ import { GlobalContext } from "../../../context/GlobalContext";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../common/Loading";
 import Error from "../../common/Error";
+
+import { Input } from "antd";
+import type { GetProps } from "antd";
+
 import "./search-bar.css";
 
 export default function SearchBar() {
@@ -14,6 +18,9 @@ export default function SearchBar() {
   const { setSearchMovie } = useContext(GlobalContext);
   const { data: movies, loading, error } = useSearchMovieFetch(query);
 
+  type SearchProps = GetProps<typeof Input.Search>;
+  const { Search } = Input;
+
   if (loading) {
     return <Loading />;
   }
@@ -21,28 +28,26 @@ export default function SearchBar() {
   if (error) {
     return <Error />;
   }
+
   function searchForMovie() {
     setSearchMovie(movies);
     nav("/search");
   }
 
+  const onSearch: SearchProps["onSearch"] = (value) => {
+    value = query;
+    searchForMovie();
+  };
   return (
     <div>
-      {" "}
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          searchForMovie();
-        }}
-      >
-        <input
-          type="text"
-          placeholder="Search for a movie..."
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <button type="submit">Search</button>
-      </form>
+      <Search
+        placeholder="Search for a movie..."
+        allowClear
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        onSearch={onSearch}
+        id="search-input"
+      />
     </div>
   );
 }
