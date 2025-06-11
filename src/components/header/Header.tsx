@@ -69,11 +69,13 @@ export default function Header() {
       </div>
       <div id="theme">
         <Switch
+          className="switch-background-color"
           onChange={(checked) => {
             if (checked) {
-              return setTheme("light");
+              setTheme("light");
+            } else {
+              setTheme("dark");
             }
-            setTheme("dark");
           }}
           checkedChildren={<SunOutlined />}
           unCheckedChildren={<MoonOutlined />}

@@ -11,8 +11,6 @@ const FeedbackFavorites: React.FC = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor:
-          theme === "light" ? "rgb(240, 240, 240)" : "rgb(80, 80, 80)",
       }}
     >
       <Result
