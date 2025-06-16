@@ -8,12 +8,17 @@ import HomePage from "./pages/HomePage";
 import Favorites from "./pages/Favorites";
 import SingleMovie from "./pages/SingleMovie";
 import SearchMovie from "./pages/SearchMovie";
+import MoviesByGenre from "./pages/MoviesByGenre";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <HomePage />,
+    },
+    {
+      path: "/movies-by-genre",
+      element: <MoviesByGenre />,
     },
     {
       path: "/favorites",

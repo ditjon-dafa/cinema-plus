@@ -19,7 +19,10 @@ export default function Header() {
       label: "Home",
       path: "/",
     },
-
+    {
+      label: "Movies by Genre",
+      path: "/movies-by-genre",
+    },
     {
       label: "My favorites",
       path: "/favorites",

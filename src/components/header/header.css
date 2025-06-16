@@ -15,9 +15,9 @@ header {
 #menu {
   grid-area: menu;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   place-items: center;
-  grid-template-areas: "Home My favorites";
+  grid-template-areas: "Home Movies by Genre My favorites";
 }
 
 #search {
@@ -31,23 +31,31 @@ header {
   background-color: rgb(22 119 255);
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1350px) {
   header {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas: "cinema-name search theme";
+    gap: 1em;
     max-height: 34vh;
   }
 
   #menu {
     grid-column: span 3;
-    gap: 1.5em;
+    gap: 7em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 1.3em;
   }
 }
 
 @media screen and (max-width: 550px) {
-  h1 {
-    font-size: 1.3em;
+  #menu {
+    gap: 3em;
   }
 }
 
@@ -63,7 +71,7 @@ header {
 
 .menu-item {
   text-decoration: none;
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 
 .menu-item:hover {

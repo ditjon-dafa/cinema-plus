@@ -14,6 +14,7 @@ function useSingleMovieFetch(id: string) {
           id +
           "?api_key=1d1d8844ae1e746c459e7be85c15c840"
       );
+
       setData(data);
       setLoading(false);
     } catch (error) {
