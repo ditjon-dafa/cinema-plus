@@ -5,6 +5,8 @@ import { Link, useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalContext";
 import SearchBar from "./components/SearchBar";
+import darkLogo from "../../images/cinema-plus-dark.png";
+import lightLogo from "../../images/cinema-plus-light.png";
 
 export default function Header() {
   const { theme, setTheme } = useContext(GlobalContext);
@@ -38,13 +40,17 @@ export default function Header() {
       }}
     >
       <div id="cinema-name">
-        <h1>
-          {" "}
-          <Link to={navItems[0].path} id="cinema-name-heading">
+        {theme === "light" ? (
+          <Link to={navItems[0].path}>
             {" "}
-            Cinema +{" "}
+            <img src={lightLogo} alt="" className="logo" />{" "}
           </Link>
-        </h1>
+        ) : (
+          <Link to={navItems[0].path}>
+            {" "}
+            <img src={darkLogo} alt="" className="logo" />{" "}
+          </Link>
+        )}
       </div>
 
       <div id="menu">

@@ -59,14 +59,12 @@ header {
   }
 }
 
-#cinema-name-heading {
-  color: orange;
-  text-decoration: none;
+.logo {
+  transition: transform 0.5s;
 }
 
-#cinema-name-heading:hover {
-  font-size: 120%;
-  transition: 0.5s;
+.logo:hover {
+  transform: scale(1.4);
 }
 
 .menu-item {
