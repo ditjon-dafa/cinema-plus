@@ -58,3 +58,12 @@ export type Genre = {
   id: number;
   name: string;
 };
+
+export type MoviesByGenre = {
+  genreId: number;
+  allPagesMovies: AllPagesMovies;
+};
+
+type AllPagesMovies = {
+  results: Array<MovieType>;
+};

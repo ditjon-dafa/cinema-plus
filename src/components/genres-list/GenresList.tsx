@@ -27,7 +27,7 @@ export default function GenresList() {
         className="movie-list"
       >
         {genres.map((genre) => {
-          return <GenreCard name={genre.name} />;
+          return <GenreCard id={genre.id} name={genre.name} />;
         })}
       </div>
     </>

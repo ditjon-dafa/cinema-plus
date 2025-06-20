@@ -1,13 +1,27 @@
 import { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalContext";
-import MovieCard from "../movie-list/components/movie-card/MovieCard";
-import FeedbackFavorites from "../../feedback-to-user/FeedbackFavorites";
-import "./favorites-movie-list.css";
+import { useParams } from "react-router-dom";
+import Loading from "../../components/common/Loading";
+import Error from "../../components/common/Error";
+import useMoviesByAGenreFetch from "../../hooks/useMoviesByAGenreFetch";
+import MovieCard from "../../components/movie-list/components/movie-card/MovieCard";
+import "../../components/favorites-movie-list/favorites-movie-list.css";
 
-export default function FavoritesMovieList() {
+export default function MoviesByAGenreList() {
+  const params = useParams() as {
+    id: string;
+  };
   const { theme } = useContext(GlobalContext);
-  const { favorites } = useContext(GlobalContext);
-  const FAVORITES_CLASS_NAME = favorites.length != 0 ? "movie-list" : "";
+  const { data, loading, error } = useMoviesByAGenreFetch(params.id);
+
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <Error />;
+  }
+
   return (
     <div
       className="movie-list-screen"
@@ -16,11 +30,9 @@ export default function FavoritesMovieList() {
           theme === "light" ? "rgb(240, 240, 240)" : "rgb(80, 80, 80)",
       }}
     >
-      <div className={FAVORITES_CLASS_NAME}>
-        {favorites.length == 0 ? (
-          <FeedbackFavorites />
-        ) : (
-          favorites.map((movie) => {
+      <div className="movie-list">
+        {data.length != 0 &&
+          data.map((movie) => {
             return (
               <MovieCard
                 adult={movie.adult}
@@ -40,8 +52,7 @@ export default function FavoritesMovieList() {
                 key={movie.id}
               />
             );
-          })
-        )}
+          })}
       </div>
     </div>
   );

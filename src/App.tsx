@@ -9,6 +9,7 @@ import Favorites from "./pages/Favorites";
 import SingleMovie from "./pages/SingleMovie";
 import SearchMovie from "./pages/SearchMovie";
 import MoviesByGenre from "./pages/MoviesByGenre";
+import MoviesByAGenre from "./pages/MoviesByAGenre";
 
 function App() {
   const router = createBrowserRouter([
@@ -21,11 +22,15 @@ function App() {
       element: <MoviesByGenre />,
     },
     {
+      path: "/movies-by-genre/:id",
+      element: <MoviesByAGenre />,
+    },
+    {
       path: "/favorites",
       element: <Favorites />,
     },
     {
-      path: "movie/:id", //calling dynamically a movie with an id
+      path: "/movie/:id", //calling dynamically a movie with an id
       element: <SingleMovie />,
     },
 
