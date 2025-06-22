@@ -6,13 +6,7 @@ import { GlobalContext } from "../context/GlobalContext";
 const FeedbackSearchMovie: React.FC = () => {
   const { theme } = useContext(GlobalContext);
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <div className="feedback-display">
       <Result
         status="404"
         title={

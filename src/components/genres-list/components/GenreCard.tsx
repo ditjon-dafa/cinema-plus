@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { GlobalContext } from "../../../context/GlobalContext";
 import { useNavigate } from "react-router-dom";
 import genre_sample_img from "../../../images/genre-sample-data.png";
+import useMoviesByAGenreFetch from "../../../hooks/useMoviesByAGenreFetch";
 
 interface Props {
   id: number;
@@ -16,6 +17,10 @@ export default function GenreCard(props: Props) {
     nav(`/movies-by-genre/${props.id}`);
   }
 
+  let genreIdString: string = props.id.toString();
+
+  const { data: moviesData } = useMoviesByAGenreFetch(genreIdString);
+
   return (
     <div
       className="card-background"
@@ -28,6 +33,7 @@ export default function GenreCard(props: Props) {
     >
       <img src={genre_sample_img} alt="" />
       <p> {props.name} </p>
+      <p> Total number of movies: {moviesData.length}</p>
     </div>
   );
 }

@@ -61,6 +61,7 @@ export type Genre = {
 
 export type MoviesByGenre = {
   genreId: number;
+  genreName: string;
   allPagesMovies: AllPagesMovies;
 };
 

@@ -3,7 +3,7 @@ import { Result } from "antd";
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 
-const FeedbackFavorites: React.FC = () => {
+const FeedbackMoviesByAGenre: React.FC = () => {
   const { theme } = useContext(GlobalContext);
   return (
     <div className="feedback-display">
@@ -18,7 +18,7 @@ const FeedbackFavorites: React.FC = () => {
               color: theme === "light" ? "black" : "white",
             }}
           >
-            Sorry, there are no favorites movies in the list!
+            Sorry, there are no movies data for this genre!
           </h1>
         }
       />
@@ -26,4 +26,4 @@ const FeedbackFavorites: React.FC = () => {
   );
 };
 
-export default FeedbackFavorites;
+export default FeedbackMoviesByAGenre;

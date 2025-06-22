@@ -1,11 +1,11 @@
 import Header from "../components/header/Header";
-import MoviesByAGenreList from "../components/movies-by-a-genre-list/MoviesByAGenreList";
+import MoviesByAGenreData from "../components/movies-by-a-genre/MoviesByAGenreData";
 
 export default function MoviesByAGenre() {
   return (
     <>
       <Header />
-      <MoviesByAGenreList />
+      <MoviesByAGenreData />
     </>
   );
 }

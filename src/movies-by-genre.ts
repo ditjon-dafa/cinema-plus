@@ -3,6 +3,7 @@ import { MoviesByGenre } from "./types";
 export const moviesByGenre: Array<MoviesByGenre> = [
   {
     genreId: 80,
+    genreName: "Crime",
     allPagesMovies: {
       results: [
         {
