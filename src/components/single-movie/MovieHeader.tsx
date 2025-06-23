@@ -13,7 +13,7 @@ export default function MovieHeader(props: Props) {
   const starStyle = {
     color: theme === "light" ? "rgb(202, 202, 0)" : "yellow",
     fontSize: "110%",
-    marginRight: "0.4em",
+    marginRight: "0.3em",
   };
   const rating = getRatingFixed(props.singleMovie.vote_average);
   return (

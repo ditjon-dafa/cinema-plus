@@ -1,3 +1,5 @@
+import { MovieType } from "./types";
+
 export function convertDurationToHoursAndMinutes(duration: number) {
   const hours = Math.floor(duration / 60);
   const minutes = duration % 60;
@@ -15,4 +17,16 @@ export function getRatingFixed(rating: number) {
   const ratingFixedNumber = parseFloat(ratingFixedString);
 
   return ratingFixedNumber;
+}
+
+export function getAverageRating(moviesData: Array<MovieType>) {
+  let averageRating: number = 0;
+  moviesData.forEach((movie) => {
+    averageRating += parseFloat(movie.vote_average.toFixed(1));
+  });
+  averageRating = averageRating / moviesData.length;
+  const averageRatingString: string = averageRating.toFixed(1);
+  averageRating = parseFloat(averageRatingString);
+
+  return averageRating;
 }
