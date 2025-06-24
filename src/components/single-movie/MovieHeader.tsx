@@ -31,7 +31,7 @@ export default function MovieHeader(props: Props) {
             textAlign: "left",
           }}
         >
-          {props.singleMovie.release_date.substring(0, 4)} - {duration.hours}{" "}
+          {props.singleMovie.release_date.substring(0, 4)} - {duration.hours} h{" "}
           {duration.minutes} m
         </p>
       </div>

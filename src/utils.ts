@@ -24,9 +24,14 @@ export function getAverageRating(moviesData: Array<MovieType>) {
   moviesData.forEach((movie) => {
     averageRating += parseFloat(movie.vote_average.toFixed(1));
   });
-  averageRating = averageRating / moviesData.length;
-  const averageRatingString: string = averageRating.toFixed(1);
-  averageRating = parseFloat(averageRatingString);
+
+  if (moviesData.length == 0) {
+    averageRating = 0;
+  } else {
+    averageRating = averageRating / moviesData.length;
+    const averageRatingString: string = averageRating.toFixed(1);
+    averageRating = parseFloat(averageRatingString);
+  }
 
   return averageRating;
 }
