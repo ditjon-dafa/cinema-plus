@@ -19,15 +19,15 @@ export default function GenreCard(props: Props) {
     color: theme === "light" ? "rgb(202, 202, 0)" : "yellow",
   };
 
-  function handleMoviesByGenreNavigation() {
-    nav(`/movies-by-genre/${props.id}`);
-  }
-
   let genreIdString: string = props.id.toString();
 
   const { data: moviesData } = useMoviesByAGenreFetch(genreIdString);
 
   const averageRating: number = getAverageRating(moviesData);
+
+  function handleMoviesByGenreNavigation() {
+    nav(`/movies-by-genre/${props.id}`);
+  }
 
   return (
     <div
