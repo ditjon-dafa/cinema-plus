@@ -2,14 +2,21 @@ import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { GlobalContext } from "./context/GlobalContext";
-import { FavoritesType, ThemeType, SearchMovieType } from "./types";
+import {
+  FavoritesType,
+  ThemeType,
+  SearchMovieType,
+  // SearchGenreType,
+  // MoviesByGenreType,
+} from "./types";
 
 import HomePage from "./pages/HomePage";
 import Favorites from "./pages/Favorites";
 import SingleMovie from "./pages/SingleMovie";
-import SearchMovie from "./pages/SearchMovie";
+// import SearchMovie from "./pages/SearchMovie";
 import MoviesByGenre from "./pages/MoviesByGenre";
 import MoviesByAGenre from "./pages/MoviesByAGenre";
+import SearchGenreOrMovie from "./pages/SearchGenreOrMovie";
 
 function App() {
   const router = createBrowserRouter([
@@ -36,7 +43,7 @@ function App() {
 
     {
       path: "/search",
-      element: <SearchMovie />,
+      element: <SearchGenreOrMovie />,
     },
   ]);
 
@@ -59,7 +66,7 @@ function App() {
   );
 
   const [searchMovie, setSearchMovie] = useState<SearchMovieType>([]);
-
+  // const [searchGenre, setSearchGenre] = useState<MoviesByGenreType>();
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
   }, [favorites]);
@@ -73,6 +80,8 @@ function App() {
         setFavorites,
         searchMovie,
         setSearchMovie,
+        // searchGenre,
+        // setSearchGenre,
       }}
     >
       <RouterProvider router={router} />

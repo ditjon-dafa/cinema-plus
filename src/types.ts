@@ -4,6 +4,13 @@ export type FavoritesType = Array<MovieType> | [];
 
 export type SearchMovieType = Array<MovieType> | [];
 
+// export type SearchGenreType = MoviesByGenreType | [];
+// {
+//   genreId: 0;
+//   genreName: "no name";
+//   allPagesMovies: [];
+// };
+
 export type MovieType = {
   adult: boolean;
   backdrop_path: string;
@@ -59,7 +66,7 @@ export type Genre = {
   name: string;
 };
 
-export type MoviesByGenre = {
+export type MoviesByGenreType = {
   genreId: number;
   genreName: string;
   allPagesMovies: AllPagesMovies;
