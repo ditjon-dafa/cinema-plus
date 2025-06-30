@@ -4,11 +4,22 @@ import useSingleGenresFetch from "../../../hooks/useSingleGenreFetch";
 import Loading from "../../common/Loading";
 import Error from "../../common/Error";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { GlobalContext } from "../../../context/GlobalContext";
+import "./../../movie-list/movie-list.css";
+interface Props {
+  queryGenre: string;
+}
 
-export default function SearchGenre(query: string) {
+export default function SearchGenre(props: Props) {
+  const { theme } = useContext(GlobalContext);
   const nav = useNavigate();
 
-  const { data: searchedGenre, loading, error } = useSingleGenresFetch(query);
+  const {
+    data: searchedGenre,
+    loading,
+    error,
+  } = useSingleGenresFetch(props.queryGenre);
 
   if (loading) {
     return <Loading />;
@@ -22,26 +33,39 @@ export default function SearchGenre(query: string) {
   }
   if (searchedGenre) {
     return (
-      <>
+      <div
+        style={{
+          backgroundColor:
+            theme === "light" ? "rgb(240, 240, 240)" : "rgb(80, 80, 80)",
+          color: theme === "light" ? "black" : "white",
+        }}
+      >
         <p> Genre Search Result: </p>
-
-        <GenreCard
-          key={searchedGenre.id}
-          id={searchedGenre.id}
-          name={searchedGenre.name}
-        />
-      </>
+        <div className="movie-list">
+          <GenreCard
+            key={searchedGenre.id}
+            id={searchedGenre.id}
+            name={searchedGenre.name}
+          />
+        </div>
+      </div>
     );
   } else {
     return (
-      <>
-        <p> There are no results for: {query}! </p>
+      <div
+        style={{
+          backgroundColor:
+            theme === "light" ? "rgb(240, 240, 240)" : "rgb(80, 80, 80)",
+          color: theme === "light" ? "black" : "white",
+        }}
+      >
+        <p> There are no results for: {props.queryGenre}! </p>
         <p>
           {" "}
           For a complete list of Cinema + genres, click{" "}
           <span onClick={handleGenresNavigation}> here! </span>
         </p>
-      </>
+      </div>
     );
   }
 }

@@ -6,6 +6,8 @@ import {
   FavoritesType,
   ThemeType,
   SearchMovieType,
+  QueryGenreMovieType,
+
   // SearchGenreType,
   // MoviesByGenreType,
 } from "./types";
@@ -16,6 +18,8 @@ import SingleMovie from "./pages/SingleMovie";
 // import SearchMovie from "./pages/SearchMovie";
 import MoviesByGenre from "./pages/MoviesByGenre";
 import MoviesByAGenre from "./pages/MoviesByAGenre";
+// import SearchGenreOrMovie from "./pages/SearchGenreOrMovie";
+import SearchBar from "./components/header/components/SearchBar";
 import SearchGenreOrMovie from "./pages/SearchGenreOrMovie";
 
 function App() {
@@ -67,6 +71,8 @@ function App() {
 
   const [searchMovie, setSearchMovie] = useState<SearchMovieType>([]);
   // const [searchGenre, setSearchGenre] = useState<MoviesByGenreType>();
+  const [queryGenreMovie, setQueryGenreMovie] =
+    useState<QueryGenreMovieType>("");
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
   }, [favorites]);
@@ -80,6 +86,8 @@ function App() {
         setFavorites,
         searchMovie,
         setSearchMovie,
+        queryGenreMovie,
+        setQueryGenreMovie,
         // searchGenre,
         // setSearchGenre,
       }}

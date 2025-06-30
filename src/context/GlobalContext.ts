@@ -3,6 +3,7 @@ import {
   ThemeType,
   FavoritesType,
   SearchMovieType,
+  QueryGenreMovieType,
   // SearchGenreType,
 } from "../types";
 
@@ -13,6 +14,8 @@ const defaultValue: {
   setFavorites: React.Dispatch<React.SetStateAction<FavoritesType>>;
   searchMovie: SearchMovieType;
   setSearchMovie: React.Dispatch<React.SetStateAction<SearchMovieType>>;
+  queryGenreMovie: QueryGenreMovieType;
+  setQueryGenreMovie: React.Dispatch<React.SetStateAction<QueryGenreMovieType>>;
   // searchGenre: SearchGenreType;
   // setSearchGenre: React.Dispatch<React.SetStateAction<SearchGenreType>>;
 } = {
@@ -22,6 +25,8 @@ const defaultValue: {
   setFavorites: () => {},
   searchMovie: [],
   setSearchMovie: () => {},
+  queryGenreMovie: "",
+  setQueryGenreMovie: () => {},
   // searchGenre: [],
   // setSearchGenre: () => {},
 };

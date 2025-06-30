@@ -4,9 +4,9 @@ import { useParams } from "react-router-dom";
 import Loading from "../common/Loading";
 import Error from "../common/Error";
 import useMoviesByAGenreFetch from "../../hooks/useMoviesByAGenreFetch";
-import "../../components/favorites-movie-list/favorites-movie-list.css";
 import FeedbackMoviesByAGenre from "../../feedback-to-user/FeedbackMoviesByAGenre";
 import MoviesByAGenreDisplay from "./components/display/MoviesByAGenreDisplay";
+import "../../components/favorites-movie-list/favorites-movie-list.css";
 
 export default function MoviesByAGenreData() {
   const params = useParams() as {

@@ -4,6 +4,8 @@ export type FavoritesType = Array<MovieType> | [];
 
 export type SearchMovieType = Array<MovieType> | [];
 
+export type QueryGenreMovieType = string | "";
+
 // export type SearchGenreType = MoviesByGenreType | [];
 // {
 //   genreId: 0;

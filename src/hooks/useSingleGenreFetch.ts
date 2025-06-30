@@ -25,7 +25,7 @@ function useSingleGenresFetch(name: string) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [name]);
 
   return {
     data,
