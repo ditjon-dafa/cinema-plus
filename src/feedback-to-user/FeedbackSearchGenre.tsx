@@ -2,9 +2,16 @@ import React from "react";
 import { Result } from "antd";
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
+import { useNavigate } from "react-router-dom";
+import "./feedback-to-user.css";
 
-const FeedbackSearchMovie: React.FC = () => {
+const FeedbackSearchGenre: React.FC = () => {
   const { theme } = useContext(GlobalContext);
+  const nav = useNavigate();
+
+  function handleGenresNavigation() {
+    nav("/movies-by-genre");
+  }
 
   return (
     <div
@@ -20,17 +27,26 @@ const FeedbackSearchMovie: React.FC = () => {
           <p style={{ color: theme === "light" ? "black" : "white" }}>"404"</p>
         }
         subTitle={
-          <h1
+          <div
             style={{
               color: theme === "light" ? "black" : "white",
             }}
           >
-            Sorry, your search key for movie did not meet any match!
-          </h1>
+            <h1>Sorry, your search key did not meet any genre!</h1>
+            <h2>
+              For a complete list of{" "}
+              <span style={{ color: "orange" }}> Cinema + </span> genres, click{" "}
+              <span onClick={handleGenresNavigation} className="link">
+                {" "}
+                here
+              </span>
+              !{" "}
+            </h2>
+          </div>
         }
       />
     </div>
   );
 };
 
-export default FeedbackSearchMovie;
+export default FeedbackSearchGenre;
