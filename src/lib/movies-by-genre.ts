@@ -1,4 +1,4 @@
-import { MoviesByGenreType } from "./types";
+import { MoviesByGenreType } from "../types";
 
 export const moviesByGenre: Array<MoviesByGenreType> = [
   {

@@ -1,13 +1,34 @@
 import { useContext } from "react";
-import { GlobalContext } from "../../context/GlobalContext";
-import MovieCard from "../movie-list/components/movie-card/MovieCard";
-import FeedbackSearchMovie from "../../feedback-to-user/FeedbackSearchMovie";
+import { GlobalContext } from "../../../../context/GlobalContext";
+import MovieCard from "../../../movie-list/components/movie-card/MovieCard";
+import FeedbackSearchMovie from "../../../../feedback-to-user/FeedbackSearchMovie";
 import "./search-movie-list.css";
+import useSearchMovieFetch from "../../../../hooks/useSearchMovieFetch";
+import Loading from "../../../common/Loading";
+import Error from "../../../common/Error";
 
-export default function SearchMovieList() {
+interface Props {
+  queryMovie: string;
+}
+
+export default function SearchMovieList(props: Props) {
   const { theme } = useContext(GlobalContext);
-  const { searchMovie } = useContext(GlobalContext);
-  const searchClassName = searchMovie.length != 0 ? "movie-list" : "";
+
+  const {
+    data: movies,
+    loading,
+    error,
+  } = useSearchMovieFetch(props.queryMovie);
+
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <Error />;
+  }
+
+  const searchClassName = movies.length != 0 ? "movie-list" : "";
   return (
     <div
       id="search-movie-list-screen"
@@ -17,10 +38,10 @@ export default function SearchMovieList() {
       }}
       className={searchClassName}
     >
-      {searchMovie.length == 0 ? (
+      {movies.length == 0 ? (
         <FeedbackSearchMovie />
       ) : (
-        searchMovie.map((movie) => {
+        movies.map((movie) => {
           return (
             <MovieCard
               adult={movie.adult}

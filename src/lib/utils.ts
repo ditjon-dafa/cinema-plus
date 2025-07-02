@@ -1,4 +1,4 @@
-import { MovieType } from "./types";
+import { MovieType } from "../types";
 
 export function convertDurationToHoursAndMinutes(duration: number) {
   const hours = Math.floor(duration / 60);

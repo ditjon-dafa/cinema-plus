@@ -1,6 +1,6 @@
 import { MovieType } from "../../../../../types";
 import MovieCard from "../../../../movie-list/components/movie-card/MovieCard";
-
+import "../../../../movie-list/movie-list.css";
 interface Props {
   moviesData: Array<MovieType>;
 }

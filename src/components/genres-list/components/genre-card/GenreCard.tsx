@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { GlobalContext } from "../../../context/GlobalContext";
+import { GlobalContext } from "../../../../context/GlobalContext";
 import { useNavigate } from "react-router-dom";
-import genre_sample_img from "../../../images/genre-sample-data.png";
-import useMoviesByAGenreFetch from "../../../hooks/useMoviesByAGenreFetch";
-import { getAverageRating } from "../../../utils";
+import genre_sample_img from "../../../../images/genre-sample-data.png";
+import useMoviesByAGenreFetch from "../../../../hooks/useMoviesByAGenreFetch";
+import { getAverageRating } from "../../../../lib/utils";
 import { StarFilled } from "@ant-design/icons";
 import "./genre-card.css";
 

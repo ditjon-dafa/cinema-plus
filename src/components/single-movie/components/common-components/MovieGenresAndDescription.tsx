@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { GlobalContext } from "../../context/GlobalContext";
-import { SingleMovieType } from "../../types";
+import { GlobalContext } from "../../../../context/GlobalContext";
+import { SingleMovieType } from "../../../../types";
 import { useNavigate } from "react-router-dom";
-import "./single-movie.css";
+import "../../single-movie.css";
 
 interface Props {
   singleMovie: SingleMovieType;

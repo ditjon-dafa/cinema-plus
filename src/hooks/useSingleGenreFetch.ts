@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Genre } from "../types";
 
-function useSingleGenresFetch(name: string) {
+function useSingleGenreFetch(name: string) {
   const [data, setData] = useState<Genre>();
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -16,6 +16,7 @@ function useSingleGenresFetch(name: string) {
         (genre: Genre) => genre.name == name
       );
       if (searchedGenre) setData(searchedGenre);
+      else setData(undefined);
       setLoading(false);
     } catch (error) {
       setError(true);
@@ -34,4 +35,4 @@ function useSingleGenresFetch(name: string) {
   };
 }
 
-export default useSingleGenresFetch;
+export default useSingleGenreFetch;

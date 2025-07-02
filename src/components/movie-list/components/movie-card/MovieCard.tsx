@@ -1,6 +1,6 @@
 import "./movie-card.css";
 import { useNavigate } from "react-router-dom";
-import { getRatingFixed } from "../../../../utils";
+import { getRatingFixed } from "../../../../lib/utils";
 import { HeartFilled, HeartOutlined, StarFilled } from "@ant-design/icons";
 import { useContext } from "react";
 import { GlobalContext } from "../../../../context/GlobalContext";

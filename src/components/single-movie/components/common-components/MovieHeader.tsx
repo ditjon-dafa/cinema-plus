@@ -1,7 +1,10 @@
 import { useContext } from "react";
-import { GlobalContext } from "../../context/GlobalContext";
-import { SingleMovieType } from "../../types";
-import { convertDurationToHoursAndMinutes, getRatingFixed } from "../../utils";
+import { GlobalContext } from "../../../../context/GlobalContext";
+import { SingleMovieType } from "../../../../types";
+import {
+  convertDurationToHoursAndMinutes,
+  getRatingFixed,
+} from "../../../../lib/utils";
 import { StarFilled } from "@ant-design/icons";
 interface Props {
   singleMovie: SingleMovieType;

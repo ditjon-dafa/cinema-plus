@@ -1,4 +1,4 @@
-import { SingleMovieType } from "../../types";
+import { SingleMovieType } from "../../../../types";
 interface Props {
   singleMovie: SingleMovieType;
 }

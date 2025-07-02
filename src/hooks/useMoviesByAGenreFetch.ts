@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { MovieType } from "../types";
-import { moviesByGenre } from "../movies-by-genre";
+import { moviesByGenre } from "../lib/movies-by-genre";
 
 export default function useMoviesByAGenreFetch(id: string) {
   const [data, setData] = useState<MovieType[]>([]);

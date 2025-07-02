@@ -3,7 +3,7 @@ import { GlobalContext } from "../../context/GlobalContext";
 import useGenresFetch from "../../hooks/useGenresFetch";
 import Loading from "../common/Loading";
 import Error from "../common/Error";
-import GenreCard from "./components/GenreCard";
+import GenreCard from "./components/genre-card/GenreCard";
 import "./genre-list.css";
 
 export default function GenresList() {

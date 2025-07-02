@@ -6,13 +6,6 @@ export type SearchMovieType = Array<MovieType> | [];
 
 export type QueryGenreMovieType = string | "";
 
-// export type SearchGenreType = MoviesByGenreType | [];
-// {
-//   genreId: 0;
-//   genreName: "no name";
-//   allPagesMovies: [];
-// };
-
 export type MovieType = {
   adult: boolean;
   backdrop_path: string;

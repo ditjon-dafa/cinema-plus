@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { GlobalContext } from "../../context/GlobalContext";
-import { SingleMovieType } from "../../types";
-import MovieGenresAndDescription from "./MovieGenresAndDescription";
-import MovieHeader from "./MovieHeader";
+import { GlobalContext } from "../../../../context/GlobalContext";
+import { SingleMovieType } from "../../../../types";
+import MovieGenresAndDescription from "../common-components/MovieGenresAndDescription";
+import MovieHeader from "../common-components/MovieHeader";
 import SmallScreenMoviePhoto from "./SmallScreenMoviePhoto";
 
 interface Props {
