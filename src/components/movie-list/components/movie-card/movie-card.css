@@ -1,5 +1,10 @@
 .card-background {
   padding: 3%;
+  transition: transform 0.5s;
+}
+
+.card-background:hover {
+  transform: scale(1.1);
 }
 
 .movie-card img {

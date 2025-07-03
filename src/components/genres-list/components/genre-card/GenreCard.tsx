@@ -3,7 +3,7 @@ import { GlobalContext } from "../../../../context/GlobalContext";
 import { useNavigate } from "react-router-dom";
 import genre_sample_img from "../../../../images/genre-sample-data.png";
 import useMoviesByAGenreFetch from "../../../../hooks/useMoviesByAGenreFetch";
-import { getAverageRating } from "../../../../lib/utils";
+import { findMainGenreMoviePos, getAverageRating } from "../../../../lib/utils";
 import { StarFilled } from "@ant-design/icons";
 import "./genre-card.css";
 
@@ -11,7 +11,7 @@ interface Props {
   id: number;
   name: string;
 }
-
+const baseUrl = "https://image.tmdb.org/t/p/w500";
 export default function GenreCard(props: Props) {
   const { theme } = useContext(GlobalContext);
   const nav = useNavigate();
@@ -24,6 +24,8 @@ export default function GenreCard(props: Props) {
   const { data: moviesData } = useMoviesByAGenreFetch(genreIdString);
 
   const averageRating: number = getAverageRating(moviesData);
+
+  const moviePos = findMainGenreMoviePos(moviesData, props.id);
 
   function handleMoviesByGenreNavigation() {
     nav(`/movies-by-genre/${props.id}`);
@@ -39,7 +41,14 @@ export default function GenreCard(props: Props) {
       }}
       onClick={handleMoviesByGenreNavigation}
     >
-      <img src={genre_sample_img} alt="" />
+      <img
+        src={
+          moviesData.length == 0 || moviePos.backdrop_path == null
+            ? genre_sample_img
+            : baseUrl + moviePos.backdrop_path
+        }
+        alt=""
+      />
       <h3> {props.name} </h3>
       <div className="genre-info">
         <div>Total number of movies: {moviesData.length}</div>

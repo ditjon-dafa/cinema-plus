@@ -35,3 +35,82 @@ export function getAverageRating(moviesData: Array<MovieType>) {
 
   return averageRating;
 }
+
+export function findMainGenreMoviePos(
+  moviesData: Array<MovieType>,
+  genreId: number
+) {
+  let moviePos = -1;
+
+  switch (genreId) {
+    case 12:
+      moviePos = 0;
+      break;
+
+    case 14:
+      moviePos = 1;
+      break;
+
+    case 16:
+      moviePos = 0;
+      break;
+
+    case 18:
+      moviePos = 1;
+      break;
+
+    case 27:
+      moviePos = 0;
+      break;
+
+    case 28:
+      moviePos = 0;
+      break;
+
+    case 35:
+      moviePos = 0;
+      break;
+
+    case 36:
+      moviePos = 0;
+      break;
+
+    case 37:
+      moviePos = 0;
+      break;
+
+    case 53:
+      moviePos = 1;
+      break;
+
+    case 80:
+      moviePos = 0;
+      break;
+
+    case 878:
+      moviePos = 0;
+      break;
+
+    case 9648:
+      moviePos = 0;
+      break;
+
+    case 10402:
+      moviePos = 0;
+      break;
+
+    case 10749:
+      moviePos = 2;
+      break;
+
+    case 10751:
+      moviePos = 1;
+      break;
+
+    case 10752:
+      moviePos = 2;
+      break;
+  }
+
+  return moviesData[moviePos];
+}
