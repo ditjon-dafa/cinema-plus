@@ -1,7 +1,6 @@
 import { MovieType } from "../../../../../../../types";
 import MovieCard from "../../../../../../movie-list/components/movie-card/MovieCard";
-import { useContext } from "react";
-import { GlobalContext } from "../../../../../../../context/GlobalContext";
+
 import "../../../search-movie-list.css";
 import "../../../../../../movie-list/movie-list.css";
 
@@ -10,15 +9,8 @@ interface Props {
 }
 
 export default function SearchMovieListDisplay(props: Props) {
-  const { theme } = useContext(GlobalContext);
   return (
-    <div
-      style={{
-        backgroundColor:
-          theme === "light" ? "rgb(240, 240, 240)" : "rgb(80, 80, 80)",
-      }}
-      className="search-movie-list-screen movie-list"
-    >
+    <div className="search-movie-list-screen search-movie-result movie-list">
       {props.searchMovieList.map((movie) => {
         return (
           <MovieCard

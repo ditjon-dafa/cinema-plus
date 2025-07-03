@@ -1,0 +1,6 @@
+.search-genre-result,
+.search-movie-result {
+  border: 0.05em solid orange;
+  border-radius: 1em;
+  margin-top: 1em;
+}

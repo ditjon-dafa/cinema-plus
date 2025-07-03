@@ -5,10 +5,10 @@ import Loading from "../../../common/Loading";
 import Error from "../../../common/Error";
 import { useContext } from "react";
 import { GlobalContext } from "../../../../context/GlobalContext";
-import "./../../../movie-list/movie-list.css";
 import SearchGenreHeader from "./components/SearchGenreHeader";
 import FeedbackSearchGenre from "../../../../feedback-to-user/FeedbackSearchGenre";
-
+import "./../../../movie-list/movie-list.css";
+import "./../../search-genre-movie.css";
 interface Props {
   queryGenre: string;
 }
@@ -42,7 +42,7 @@ export default function SearchGenre(props: Props) {
         }}
       >
         <SearchGenreHeader />
-        <div className="movie-list">
+        <div className="search-genre-result movie-list">
           <GenreCard
             key={searchedGenre.id}
             id={searchedGenre.id}

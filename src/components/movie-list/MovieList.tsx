@@ -60,7 +60,9 @@ export default function MovieList() {
           showTotal={(total) => `Total ${total} items`}
           defaultPageSize={20}
           defaultCurrent={currentPage}
-          onChange={(current) => setCurrentPage(current)}
+          onChange={(current) => {
+            setCurrentPage(current);
+          }}
         />
       </div>
     </>
