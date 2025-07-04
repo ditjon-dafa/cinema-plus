@@ -16,8 +16,8 @@ export default function BasicInfo() {
     >
       <p>
         {" "}
-        <span style={{ color: "orange" }}> Cinema + : </span>Discover our top
-        rated movies!
+        <span style={{ color: "orange" }}> Cinema + : </span>Discover our
+        top-rated movies!
       </p>
     </div>
   );
