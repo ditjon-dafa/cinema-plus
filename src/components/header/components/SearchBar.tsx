@@ -25,7 +25,7 @@ export default function SearchBar() {
   return (
     <div>
       <Search
-        placeholder="Movie or Genre"
+        placeholder="Genre or Movie"
         allowClear
         value={query}
         onChange={(e) => setQuery(e.target.value)}

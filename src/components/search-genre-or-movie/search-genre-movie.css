@@ -4,3 +4,10 @@
   border-radius: 1em;
   margin-top: 1em;
 }
+
+.search-genre-result {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  padding: 1.5em;
+}

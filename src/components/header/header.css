@@ -5,7 +5,7 @@ header {
   gap: 1.5em;
   padding: 1em 0;
   grid-template-areas: "cinema-name menu search theme";
-  max-height: 22vh;
+  min-height: 16vh;
 }
 
 #cinema-name {
@@ -45,7 +45,7 @@ header {
     grid-template-rows: auto;
     grid-template-areas: "cinema-name search theme";
     gap: 1em;
-    max-height: 34vh;
+    min-height: 30vh;
   }
 
   #menu {

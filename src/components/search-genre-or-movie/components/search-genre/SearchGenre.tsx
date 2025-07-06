@@ -42,7 +42,7 @@ export default function SearchGenre(props: Props) {
         }}
       >
         <SearchGenreHeader />
-        <div className="search-genre-result movie-list">
+        <div className="search-genre-result">
           <GenreCard
             key={searchedGenre.id}
             id={searchedGenre.id}
