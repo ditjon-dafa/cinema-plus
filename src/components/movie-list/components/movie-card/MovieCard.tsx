@@ -1,10 +1,10 @@
-import "./movie-card.css";
 import { useNavigate } from "react-router-dom";
 import { getRatingFixed } from "../../../../lib/utils";
 import { HeartFilled, HeartOutlined, StarFilled } from "@ant-design/icons";
 import { useContext } from "react";
 import { GlobalContext } from "../../../../context/GlobalContext";
 import img from "../../../../images/no-image-data.png";
+import "./movie-card.css";
 
 interface Props {
   adult: boolean;

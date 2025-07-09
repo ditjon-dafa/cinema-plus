@@ -1,5 +1,5 @@
 import { SingleMovieType } from "../../../../types";
-
+import "../../single-movie.css";
 interface Props {
   singleMovie: SingleMovieType;
 }

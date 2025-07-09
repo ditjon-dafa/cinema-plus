@@ -4,12 +4,12 @@ header {
   place-items: center;
   gap: 1.5em;
   padding: 1em 0;
-  grid-template-areas: "cinema-name menu search theme";
+  grid-template-areas: "cinema-logo menu search theme";
   min-height: 16vh;
 }
 
-#cinema-name {
-  grid-area: cinema-name;
+#cinema-logo {
+  grid-area: cinema-logo;
 }
 
 #menu {
@@ -43,7 +43,7 @@ header {
   header {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas: "cinema-name search theme";
+    grid-template-areas: "cinema-logo search theme";
     gap: 1em;
     min-height: 30vh;
   }

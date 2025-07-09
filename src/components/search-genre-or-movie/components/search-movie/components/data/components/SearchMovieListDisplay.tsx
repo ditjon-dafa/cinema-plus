@@ -1,7 +1,7 @@
 import { MovieType } from "../../../../../../../types";
 import MovieCard from "../../../../../../movie-list/components/movie-card/MovieCard";
 
-import "../../../search-movie-list.css";
+import "../../../../../search-genre-movie.css";
 import "../../../../../../movie-list/movie-list.css";
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 
 export default function SearchMovieListDisplay(props: Props) {
   return (
-    <div className="search-movie-list-screen search-movie-result movie-list">
+    <div className="search-movie-result movie-list">
       {props.searchMovieList.map((movie) => {
         return (
           <MovieCard

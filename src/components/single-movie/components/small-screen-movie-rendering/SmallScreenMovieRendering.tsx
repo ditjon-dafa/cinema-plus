@@ -4,7 +4,7 @@ import { SingleMovieType } from "../../../../types";
 import MovieGenresAndDescription from "../common-components/MovieGenresAndDescription";
 import MovieHeader from "../common-components/MovieHeader";
 import SmallScreenMoviePhoto from "./SmallScreenMoviePhoto";
-
+import "../../single-movie.css";
 interface Props {
   singleMovie: SingleMovieType;
 }

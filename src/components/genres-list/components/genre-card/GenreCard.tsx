@@ -6,6 +6,7 @@ import useMoviesByAGenreFetch from "../../../../hooks/useMoviesByAGenreFetch";
 import { findMainGenreMoviePos, getAverageRating } from "../../../../lib/utils";
 import { StarFilled } from "@ant-design/icons";
 import "./genre-card.css";
+import "../../../movie-list/components/movie-card/movie-card.css";
 
 interface Props {
   id: number;

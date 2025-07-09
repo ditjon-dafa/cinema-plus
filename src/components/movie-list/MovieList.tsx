@@ -1,13 +1,12 @@
 import { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalContext";
 import MovieCard from "./components/movie-card/MovieCard";
-import "./movie-list.css";
 import useFetch from "../../hooks/useFetch";
 import Loading from "../common/Loading";
 import Error from "../common/Error";
-
 import { Pagination } from "antd";
 import { useState } from "react";
+import "./movie-list.css";
 
 export default function MovieList() {
   const [currentPage, setCurrentPage] = useState<number>(1);

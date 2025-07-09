@@ -2,6 +2,8 @@ import React from "react";
 import { Result } from "antd";
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
+import "../components/search-genre-or-movie/components/search-movie/search-movie-list.css";
+import "./feedback-to-user.css";
 
 const FeedbackSearchMovie: React.FC = () => {
   const { theme } = useContext(GlobalContext);

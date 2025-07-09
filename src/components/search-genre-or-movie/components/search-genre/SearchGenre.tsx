@@ -7,8 +7,8 @@ import { useContext } from "react";
 import { GlobalContext } from "../../../../context/GlobalContext";
 import SearchGenreHeader from "./components/SearchGenreHeader";
 import FeedbackSearchGenre from "../../../../feedback-to-user/FeedbackSearchGenre";
-import "./../../../movie-list/movie-list.css";
 import "./../../search-genre-movie.css";
+import "../../components/search-movie/search-movie-list.css";
 interface Props {
   queryGenre: string;
 }
@@ -40,6 +40,7 @@ export default function SearchGenre(props: Props) {
             theme === "light" ? "rgb(240, 240, 240)" : "rgb(80, 80, 80)",
           color: theme === "light" ? "black" : "white",
         }}
+        className="search-movie-list-screen"
       >
         <SearchGenreHeader />
         <div className="search-genre-result">

@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import { useNavigate } from "react-router-dom";
 import "./feedback-to-user.css";
-
+import "../components/search-genre-or-movie/components/search-movie/search-movie-list.css";
 const FeedbackSearchGenre: React.FC = () => {
   const { theme } = useContext(GlobalContext);
   const nav = useNavigate();

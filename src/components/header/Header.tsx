@@ -1,5 +1,4 @@
 import { Switch } from "antd";
-import "./header.css";
 import { MoonOutlined, SunOutlined } from "@ant-design/icons";
 import { Link, useLocation } from "react-router-dom";
 import { useContext } from "react";
@@ -7,6 +6,7 @@ import { GlobalContext } from "../../context/GlobalContext";
 import SearchBar from "./components/SearchBar";
 import darkLogo from "../../images/cinema-plus-dark.png";
 import lightLogo from "../../images/cinema-plus-light.png";
+import "./header.css";
 
 export default function Header() {
   const { theme, setTheme } = useContext(GlobalContext);
@@ -39,7 +39,7 @@ export default function Header() {
         color: theme === "light" ? "black" : "white",
       }}
     >
-      <div id="cinema-name">
+      <div id="cinema-logo">
         {theme === "light" ? (
           <Link to={navItems[0].path}>
             {" "}

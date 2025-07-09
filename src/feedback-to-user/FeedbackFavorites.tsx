@@ -10,7 +10,13 @@ const FeedbackFavorites: React.FC = () => {
       <Result
         status="404"
         title={
-          <p style={{ color: theme === "light" ? "black" : "white" }}>"404"</p>
+          <p
+            style={{
+              color: theme === "light" ? "black" : "white",
+            }}
+          >
+            "404"
+          </p>
         }
         subTitle={
           <h1

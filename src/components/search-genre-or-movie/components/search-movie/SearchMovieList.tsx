@@ -1,5 +1,4 @@
 import FeedbackSearchMovie from "../../../../feedback-to-user/FeedbackSearchMovie";
-import "./search-movie-list.css";
 import useSearchMovieFetch from "../../../../hooks/useSearchMovieFetch";
 import Loading from "../../../common/Loading";
 import Error from "../../../common/Error";

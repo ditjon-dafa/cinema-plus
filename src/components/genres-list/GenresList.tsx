@@ -5,6 +5,7 @@ import Loading from "../common/Loading";
 import Error from "../common/Error";
 import GenreCard from "./components/genre-card/GenreCard";
 import "./genre-list.css";
+import "../movie-list/movie-list.css";
 
 export default function GenresList() {
   const { theme } = useContext(GlobalContext);

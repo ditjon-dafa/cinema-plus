@@ -1,7 +1,6 @@
 import { SingleMovieType } from "../../types";
 import SmallScreenMovieRendering from "./components/small-screen-movie-rendering/SmallScreenMovieRendering";
 import LargeScreenMovieRendering from "./components/large-screen-movie-rendering/LargeScreenMovieRendering";
-import "./single-movie.css";
 import useWindowResize from "../../hooks/useWindowResize";
 
 interface Props {

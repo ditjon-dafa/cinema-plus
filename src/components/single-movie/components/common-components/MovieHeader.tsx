@@ -6,6 +6,8 @@ import {
   getRatingFixed,
 } from "../../../../lib/utils";
 import { StarFilled } from "@ant-design/icons";
+import "../../single-movie.css";
+
 interface Props {
   singleMovie: SingleMovieType;
 }

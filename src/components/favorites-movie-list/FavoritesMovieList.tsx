@@ -3,6 +3,7 @@ import { GlobalContext } from "../../context/GlobalContext";
 import MovieCard from "../movie-list/components/movie-card/MovieCard";
 import FeedbackFavorites from "../../feedback-to-user/FeedbackFavorites";
 import "./favorites-movie-list.css";
+import "../movie-list/movie-list.css";
 
 export default function FavoritesMovieList() {
   const { theme } = useContext(GlobalContext);
