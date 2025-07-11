@@ -6,6 +6,9 @@ header {
   padding: 1em 0;
   grid-template-areas: "cinema-logo menu search theme";
   min-height: 16vh;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 #cinema-logo {
