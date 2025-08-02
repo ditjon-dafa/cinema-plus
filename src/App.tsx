@@ -1,5 +1,6 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { FloatButton } from "antd";
 import { useState, useEffect } from "react";
 import { GlobalContext } from "./context/GlobalContext";
 import {
@@ -91,6 +92,7 @@ function App() {
         setQueryGenreMovie,
       }}
     >
+      <FloatButton.BackTop />
       <RouterProvider router={router} />
     </GlobalContext.Provider>
   );
