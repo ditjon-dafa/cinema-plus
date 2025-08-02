@@ -7,6 +7,8 @@ import {
   ThemeType,
   SearchMovieType,
   QueryGenreMovieType,
+  PageType,
+  PagePartType,
 } from "./types";
 
 import HomePage from "./pages/HomePage";
@@ -59,6 +61,8 @@ function App() {
   //of "MovieType" type will be in constant "favorites"
 
   const [theme, setTheme] = useState<ThemeType>("dark");
+  const [currentPage, setCurrentPage] = useState<PageType>(1);
+  const [pagePart, setPagePart] = useState<PagePartType>(1);
   const [favorites, setFavorites] = useState<FavoritesType>(
     favoritesFromLocalStorage
   );
@@ -75,6 +79,10 @@ function App() {
       value={{
         theme,
         setTheme,
+        currentPage,
+        setCurrentPage,
+        pagePart,
+        setPagePart,
         favorites,
         setFavorites,
         searchMovie,

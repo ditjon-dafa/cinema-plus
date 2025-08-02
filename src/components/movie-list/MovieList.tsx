@@ -1,17 +1,21 @@
 import { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalContext";
 import MovieCard from "./components/movie-card/MovieCard";
-import useFetch from "../../hooks/useFetch";
+import useAllMoviesPageFetch from "../../hooks/useAllMoviesPageFetch";
 import Loading from "../common/Loading";
 import Error from "../common/Error";
-import { Pagination } from "antd";
-import { useState } from "react";
+import PaginationDesign from "../../lib/PaginationDesign";
 import "./movie-list.css";
 
 export default function MovieList() {
-  const [currentPage, setCurrentPage] = useState<number>(1);
+  const { currentPage } = useContext(GlobalContext);
   const { theme } = useContext(GlobalContext);
-  const { data: movies, totalPages, loading, error } = useFetch(currentPage);
+  const {
+    data: movies,
+    totalPages,
+    loading,
+    error,
+  } = useAllMoviesPageFetch(currentPage);
 
   if (loading) {
     return <Loading />;
@@ -53,16 +57,7 @@ export default function MovieList() {
         })}
       </div>
       <div>
-        <Pagination
-          align="center"
-          total={totalPages}
-          showTotal={(total) => `Total ${total} items`}
-          defaultPageSize={20}
-          defaultCurrent={currentPage}
-          onChange={(current) => {
-            setCurrentPage(current);
-          }}
-        />
+        <PaginationDesign totalPages={totalPages} />
       </div>
     </>
   );

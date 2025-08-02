@@ -6,6 +6,10 @@
   padding: 1.5em;
 }
 
+.pagination-style {
+  margin: 0.5em 0;
+}
+
 @media screen and (max-width: 1000px) {
   .movie-list {
     grid-template-columns: 1fr 1fr;

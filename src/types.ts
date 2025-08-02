@@ -1,5 +1,9 @@
 export type ThemeType = "light" | "dark";
 
+export type PageType = number;
+
+export type PagePartType = 1 | 2;
+
 export type FavoritesType = Array<MovieType> | [];
 
 export type SearchMovieType = Array<MovieType> | [];
