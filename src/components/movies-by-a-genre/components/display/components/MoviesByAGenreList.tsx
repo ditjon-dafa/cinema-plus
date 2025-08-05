@@ -2,13 +2,13 @@ import { MovieType } from "../../../../../types";
 import MovieCard from "../../../../movie-list/components/movie-card/MovieCard";
 import "../../../../movie-list/movie-list.css";
 interface Props {
-  moviesData: Array<MovieType>;
+  pageMoviesResults: Array<MovieType>;
 }
 
 export default function MoviesByAGenreList(props: Props) {
   return (
     <div className="movie-list">
-      {props.moviesData.map((movie) => {
+      {props.pageMoviesResults.map((movie) => {
         return (
           <MovieCard
             adult={movie.adult}

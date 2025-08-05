@@ -68,9 +68,10 @@ export type Genre = {
 export type MoviesByGenreType = {
   genreId: number;
   genreName: string;
-  allPagesMovies: AllPagesMovies;
+  allPagesMovies: Array<PageMovies>;
 };
 
-type AllPagesMovies = {
+export type PageMovies = {
+  pageNr: number;
   results: Array<MovieType>;
 };

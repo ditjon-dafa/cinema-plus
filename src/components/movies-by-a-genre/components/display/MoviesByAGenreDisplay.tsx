@@ -4,14 +4,14 @@ import MoviesByAGenreList from "./components/MoviesByAGenreList";
 
 interface Props {
   genreId: string;
-  moviesData: Array<MovieType>;
+  pageMoviesResults: Array<MovieType>;
 }
 
 export default function MoviesByAGenreDisplay(props: Props) {
   return (
     <>
       <GenreInfo genreId={props.genreId} />
-      <MoviesByAGenreList moviesData={props.moviesData} />
+      <MoviesByAGenreList pageMoviesResults={props.pageMoviesResults} />
     </>
   );
 }

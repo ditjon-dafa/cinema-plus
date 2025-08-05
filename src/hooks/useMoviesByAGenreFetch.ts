@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { MovieType } from "../types";
+import { PageMovies } from "../types";
 import { moviesByGenre } from "../lib/movies-by-genre";
 
-export default function useMoviesByAGenreFetch(id: string) {
-  const [data, setData] = useState<MovieType[]>([]);
+export default function useMoviesByAGenreFetch(id: string, pageNr: number) {
+  const [data, setData] = useState<PageMovies>();
+  const [pagesLength, setPagesLength] = useState<number>(0);
+  const [allPagesMovies, setAllPagesMovies] = useState<Array<PageMovies>>([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   const intId = parseInt(id);
@@ -14,7 +16,15 @@ export default function useMoviesByAGenreFetch(id: string) {
         (moviesByAGenre) => moviesByAGenre.genreId == intId
       );
       if (data) {
-        setData(data.allPagesMovies.results);
+        const pagesLength = data?.allPagesMovies.length;
+        setPagesLength(pagesLength);
+        setAllPagesMovies(data.allPagesMovies);
+      }
+      if (data) {
+        const pageMovies = data.allPagesMovies.find(
+          (allMovies) => allMovies.pageNr == pageNr
+        );
+        if (pageMovies) setData(pageMovies);
       }
 
       setLoading(false);
@@ -27,10 +37,12 @@ export default function useMoviesByAGenreFetch(id: string) {
 
   useEffect(() => {
     getData();
-  }, [id]);
+  }, [id, pageNr]);
 
   return {
     data,
+    pagesLength,
+    allPagesMovies,
     loading,
     error,
   };

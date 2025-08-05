@@ -1,4 +1,4 @@
-import { MovieType } from "../types";
+import { PageMovies } from "../types";
 
 export function convertDurationToHoursAndMinutes(duration: number) {
   const hours = Math.floor(duration / 60);
@@ -19,16 +19,20 @@ export function getRatingFixed(rating: number) {
   return ratingFixedNumber;
 }
 
-export function getAverageRating(moviesData: Array<MovieType>) {
+export function getAverageRating(allPagesMovies: Array<PageMovies>) {
   let averageRating: number = 0;
-  moviesData.forEach((movie) => {
-    averageRating += parseFloat(movie.vote_average.toFixed(1));
+  let moviesCount = 0;
+  allPagesMovies.forEach((page) => {
+    page.results.forEach((movie) => {
+      averageRating += parseFloat(movie.vote_average.toFixed(1));
+      moviesCount++;
+    });
   });
 
-  if (moviesData.length == 0) {
+  if (moviesCount == 0) {
     averageRating = 0;
   } else {
-    averageRating = averageRating / moviesData.length;
+    averageRating = averageRating / moviesCount;
     const averageRatingString: string = averageRating.toFixed(1);
     averageRating = parseFloat(averageRatingString);
   }
@@ -36,8 +40,16 @@ export function getAverageRating(moviesData: Array<MovieType>) {
   return averageRating;
 }
 
+export function getGenreMoviesLength(allPagesMovies: Array<PageMovies>) {
+  let moviesCount = 0;
+  allPagesMovies.forEach((page) => {
+    moviesCount += page.results.length;
+  });
+  return moviesCount;
+}
+
 export function findMainGenreMoviePos(
-  moviesData: Array<MovieType>,
+  allPagesMovies: Array<PageMovies>,
   genreId: number
 ) {
   let moviePos = -1;
@@ -112,5 +124,7 @@ export function findMainGenreMoviePos(
       break;
   }
 
-  return moviesData[moviePos];
+  const genreIdPageOne = allPagesMovies.find((page) => page.pageNr == 1);
+  if (genreIdPageOne) return genreIdPageOne.results[moviePos];
+  else return null;
 }

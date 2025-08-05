@@ -15,6 +15,7 @@ const defaultValue: {
   setCurrentPage: React.Dispatch<React.SetStateAction<PageType>>;
   pagePart: PagePartType;
   setPagePart: React.Dispatch<React.SetStateAction<PagePartType>>;
+
   favorites: FavoritesType;
   setFavorites: React.Dispatch<React.SetStateAction<FavoritesType>>;
   searchMovie: SearchMovieType;
@@ -28,6 +29,7 @@ const defaultValue: {
   setCurrentPage: () => {},
   pagePart: 1,
   setPagePart: () => {},
+
   favorites: [],
   setFavorites: () => {},
   searchMovie: [],

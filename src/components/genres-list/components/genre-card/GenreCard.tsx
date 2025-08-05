@@ -3,7 +3,11 @@ import { GlobalContext } from "../../../../context/GlobalContext";
 import { useNavigate } from "react-router-dom";
 import genre_sample_img from "../../../../images/genre-sample-data.png";
 import useMoviesByAGenreFetch from "../../../../hooks/useMoviesByAGenreFetch";
-import { findMainGenreMoviePos, getAverageRating } from "../../../../lib/utils";
+import {
+  findMainGenreMoviePos,
+  getAverageRating,
+  getGenreMoviesLength,
+} from "../../../../lib/utils";
 import { StarFilled } from "@ant-design/icons";
 import "./genre-card.css";
 import "../../../movie-list/components/movie-card/movie-card.css";
@@ -22,11 +26,14 @@ export default function GenreCard(props: Props) {
 
   let genreIdString: string = props.id.toString();
 
-  const { data: moviesData } = useMoviesByAGenreFetch(genreIdString);
+  const { allPagesMovies } = useMoviesByAGenreFetch(genreIdString, 1);
 
-  const averageRating: number = getAverageRating(moviesData);
+  const averageRating: number = getAverageRating(allPagesMovies);
 
-  const moviePos = findMainGenreMoviePos(moviesData, props.id);
+  const moviePos = findMainGenreMoviePos(allPagesMovies, props.id);
+  let posterPath = moviePos ? moviePos.backdrop_path : null;
+
+  const genreMoviesLength = getGenreMoviesLength(allPagesMovies);
 
   function handleMoviesByGenreNavigation() {
     nav(`/movies-by-genre/${props.id}`);
@@ -44,15 +51,15 @@ export default function GenreCard(props: Props) {
     >
       <img
         src={
-          moviesData.length == 0 || moviePos.backdrop_path == null
+          allPagesMovies.length == 0 || posterPath == null
             ? genre_sample_img
-            : baseUrl + moviePos.backdrop_path
+            : baseUrl + posterPath
         }
         alt=""
       />
       <h3> {props.name} </h3>
       <div className="genre-info">
-        <div>Total number of movies: {moviesData.length}</div>
+        <div>Total number of movies: {genreMoviesLength}</div>
         <div>
           {" "}
           <p>

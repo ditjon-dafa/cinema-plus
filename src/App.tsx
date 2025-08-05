@@ -64,6 +64,7 @@ function App() {
   const [theme, setTheme] = useState<ThemeType>("dark");
   const [currentPage, setCurrentPage] = useState<PageType>(1);
   const [pagePart, setPagePart] = useState<PagePartType>(1);
+
   const [favorites, setFavorites] = useState<FavoritesType>(
     favoritesFromLocalStorage
   );
