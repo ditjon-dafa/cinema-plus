@@ -78,7 +78,9 @@ export default function Header() {
       </div>
       <div id="theme">
         <Switch
-          className="switch-background-color"
+          style={{
+            background: theme === "dark" ? "orange" : "orange",
+          }}
           onChange={(checked) => {
             if (checked) {
               setTheme("light");

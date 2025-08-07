@@ -10,6 +10,8 @@ export type SearchMovieType = Array<MovieType> | [];
 
 export type QueryGenreMovieType = string | "";
 
+export type ModalType = boolean;
+
 export type MovieType = {
   adult: boolean;
   backdrop_path: string;

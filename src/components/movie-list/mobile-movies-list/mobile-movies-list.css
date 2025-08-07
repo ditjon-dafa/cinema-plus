@@ -1,4 +1,5 @@
-.page-parts {
+.page-parts,
+.genre-movies-pages {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -9,18 +10,32 @@
   color: black;
   text-decoration: none;
 }
-.page-part:hover {
+.genre-movies-list {
+  text-decoration: none;
+}
+.page-part:hover,
+.genre-movies-list:hover {
   background-color: rgb(240, 240, 240);
   border-radius: 0.35em;
   padding: 0.3em;
 }
 
-.page-part.active {
+.genre-movies-list:hover {
+  background-color: orange;
+}
+
+.page-part.active,
+.genre-movies-list.active {
   color: dodgerblue;
   font-weight: bold;
   border: 0.05em solid dodgerblue;
   border-radius: 0.35em;
   padding: 0.3em;
+}
+
+.genre-movies-list.active {
+  color: orange;
+  border: 0.05em solid orange;
 }
 
 .page-part.active:hover {

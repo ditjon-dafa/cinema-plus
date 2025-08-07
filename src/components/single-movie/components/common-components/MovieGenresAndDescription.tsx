@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { GlobalContext } from "../../../../context/GlobalContext";
 import { SingleMovieType } from "../../../../types";
 import { useNavigate } from "react-router-dom";
 import "../../single-movie.css";
@@ -9,7 +7,6 @@ interface Props {
 }
 
 export default function MovieGenresAndDescription(props: Props) {
-  const { theme } = useContext(GlobalContext);
   const nav = useNavigate();
   const movieGenres = props.singleMovie.genres;
 
@@ -25,8 +22,7 @@ export default function MovieGenresAndDescription(props: Props) {
               key={genre.id}
               className="genres"
               style={{
-                border:
-                  theme === "light" ? "0.1em solid black" : "0.1em solid white",
+                border: "0.05em solid orange",
               }}
               onClick={() => handleMovieGenre(genre.id)}
             >

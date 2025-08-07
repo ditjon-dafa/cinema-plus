@@ -10,6 +10,7 @@ import {
   QueryGenreMovieType,
   PageType,
   PagePartType,
+  ModalType,
 } from "./types";
 
 import HomePage from "./pages/HomePage";
@@ -72,6 +73,7 @@ function App() {
   const [queryGenreMovie, setQueryGenreMovie] =
     useState<QueryGenreMovieType>("");
 
+  const [isModalOpen, setIsModalOpen] = useState<ModalType>(false);
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
   }, [favorites]);
@@ -91,9 +93,15 @@ function App() {
         setSearchMovie,
         queryGenreMovie,
         setQueryGenreMovie,
+        isModalOpen,
+        setIsModalOpen,
       }}
     >
-      <FloatButton.BackTop />
+      <FloatButton.BackTop
+        style={{
+          backgroundColor: "orange",
+        }}
+      />
       <RouterProvider router={router} />
     </GlobalContext.Provider>
   );

@@ -16,7 +16,9 @@ export default function MoviesByAGenreData() {
     id: string;
   };
   const { theme } = useContext(GlobalContext);
-
+  const linkStyles = {
+    color: theme === "light" ? "black" : "white",
+  };
   const [genrePage, setGenrePage] = useState(1);
   const { data, pagesLength, loading, error } = useMoviesByAGenreFetch(
     params.id,
@@ -53,15 +55,20 @@ export default function MoviesByAGenreData() {
           )}
         </div>
         {pagesLength == 3 ? (
-          <div className="page-parts">
+          <div className="genre-movies-pages">
             <div
               onClick={() => {
                 setGenrePage(1);
               }}
             >
               <Link
+                style={linkStyles}
                 to={`/movies-by-genre/${params.id}`}
-                className={genrePage == 1 ? "page-part active" : "page-part"}
+                className={
+                  genrePage == 1
+                    ? "genre-movies-list active"
+                    : "genre-movies-list"
+                }
               >
                 {" "}
                 Page 1
@@ -73,8 +80,13 @@ export default function MoviesByAGenreData() {
               }}
             >
               <Link
+                style={linkStyles}
                 to={`/movies-by-genre/${params.id}`}
-                className={genrePage == 2 ? "page-part active" : "page-part"}
+                className={
+                  genrePage == 2
+                    ? "genre-movies-list active"
+                    : "genre-movies-list"
+                }
               >
                 {" "}
                 Page 2
@@ -86,8 +98,13 @@ export default function MoviesByAGenreData() {
               }}
             >
               <Link
+                style={linkStyles}
                 to={`/movies-by-genre/${params.id}`}
-                className={genrePage == 3 ? "page-part active" : "page-part"}
+                className={
+                  genrePage == 3
+                    ? "genre-movies-list active"
+                    : "genre-movies-list"
+                }
               >
                 {" "}
                 Page 3

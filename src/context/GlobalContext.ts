@@ -6,6 +6,7 @@ import {
   SearchMovieType,
   QueryGenreMovieType,
   PagePartType,
+  ModalType,
 } from "../types";
 
 const defaultValue: {
@@ -15,13 +16,14 @@ const defaultValue: {
   setCurrentPage: React.Dispatch<React.SetStateAction<PageType>>;
   pagePart: PagePartType;
   setPagePart: React.Dispatch<React.SetStateAction<PagePartType>>;
-
   favorites: FavoritesType;
   setFavorites: React.Dispatch<React.SetStateAction<FavoritesType>>;
   searchMovie: SearchMovieType;
   setSearchMovie: React.Dispatch<React.SetStateAction<SearchMovieType>>;
   queryGenreMovie: QueryGenreMovieType;
   setQueryGenreMovie: React.Dispatch<React.SetStateAction<QueryGenreMovieType>>;
+  isModalOpen: ModalType;
+  setIsModalOpen: React.Dispatch<React.SetStateAction<ModalType>>;
 } = {
   theme: "dark", // is overided in App.tsx:  const [theme, setTheme] = useState<ThemeType>("dark");
   setTheme: () => {},
@@ -29,12 +31,13 @@ const defaultValue: {
   setCurrentPage: () => {},
   pagePart: 1,
   setPagePart: () => {},
-
   favorites: [],
   setFavorites: () => {},
   searchMovie: [],
   setSearchMovie: () => {},
   queryGenreMovie: "",
   setQueryGenreMovie: () => {},
+  isModalOpen: false,
+  setIsModalOpen: () => {},
 };
 export const GlobalContext = createContext(defaultValue);

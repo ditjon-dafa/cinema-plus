@@ -66,3 +66,19 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+.cinema-plus-buttons {
+  background-color: transparent;
+  border: 0.1em solid orange;
+  border-radius: 0.35em;
+  padding: 0.3em;
+}
+.cinema-plus-buttons:hover {
+  border: 0.15em solid orange;
+  font-weight: 600;
+}
+
+.cinema-plus-inputs {
+  border-radius: 0.35em;
+  border: 0.05em solid lightgray;
+}
