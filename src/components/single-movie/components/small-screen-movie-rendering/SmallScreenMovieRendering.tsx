@@ -33,7 +33,11 @@ export default function SmallScreenMovieRendering(props: Props) {
         <MovieGenresAndDescription singleMovie={props.singleMovie} />
       </div>
       <div style={{ padding: 25 }}>
-        <button onClick={handleBooking} className="cinema-plus-buttons">
+        <button
+          onClick={handleBooking}
+          className="cinema-plus-buttons"
+          style={{ color: theme === "light" ? "black" : "white" }}
+        >
           {" "}
           Book this movie
         </button>
