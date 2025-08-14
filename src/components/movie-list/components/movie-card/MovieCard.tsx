@@ -41,16 +41,18 @@ export default function MovieCard(props: Props) {
     nav(`/movie/${props.id}`);
   }
 
-  function handleFavoriteMovie() {
+  function handleFavoriteMovie(event: { stopPropagation: () => void }) {
     const favoriteMovie = { ...props };
     setFavorites([...favorites, favoriteMovie]);
+    event.stopPropagation();
   }
 
-  function handleUnFavoriteMovie() {
+  function handleUnFavoriteMovie(event: { stopPropagation: () => void }) {
     const onlyFavoriteMovies = favorites.filter(
       (movie) => movie.id != props.id
     );
     setFavorites(onlyFavoriteMovies);
+    event.stopPropagation();
   }
 
   return (
@@ -62,13 +64,6 @@ export default function MovieCard(props: Props) {
         color: theme === "light" ? "black" : "white",
       }}
     >
-      <div className="heart" style={{ color: "red" }}>
-        {isMovieFavorite ? (
-          <HeartFilled onClick={handleUnFavoriteMovie} />
-        ) : (
-          <HeartOutlined onClick={handleFavoriteMovie} />
-        )}
-      </div>
       <article onClick={handleSingleMovieNavigation} className="movie-card">
         <img
           src={
@@ -76,14 +71,27 @@ export default function MovieCard(props: Props) {
           }
           alt=""
         />
-
-        <p>
-          <span style={starStyle}>
-            <StarFilled />
-          </span>{" "}
-          {rating}
-        </p>
-        <h3>{props.title}</h3>
+        <div className="bottom-card">
+          <div>
+            <p>
+              <span style={starStyle}>
+                <StarFilled />
+              </span>{" "}
+              {rating}
+            </p>
+            <h3>{props.title}</h3>
+          </div>
+          <div
+            className="heart"
+            style={{ color: theme === "light" ? "black" : "white" }}
+          >
+            {isMovieFavorite ? (
+              <HeartFilled onClick={handleUnFavoriteMovie} />
+            ) : (
+              <HeartOutlined onClick={handleFavoriteMovie} />
+            )}
+          </div>
+        </div>
       </article>
     </div>
   );
