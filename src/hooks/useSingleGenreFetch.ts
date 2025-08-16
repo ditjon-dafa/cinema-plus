@@ -12,9 +12,11 @@ function useSingleGenreFetch(name: string) {
       "https://api.themoviedb.org/3/genre/movie/list?api_key=1d1d8844ae1e746c459e7be85c15c840";
     try {
       const { data } = await axios.get(url);
+
       const searchedGenre = data.genres.find(
-        (genre: Genre) => genre.name == name
+        (genre: Genre) => genre.name == name || genre.name.toLowerCase() == name
       );
+
       if (searchedGenre) setData(searchedGenre);
       else setData(undefined);
       setLoading(false);
