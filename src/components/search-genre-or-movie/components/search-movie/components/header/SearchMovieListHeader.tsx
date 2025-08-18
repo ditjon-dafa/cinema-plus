@@ -1,4 +1,4 @@
-import "../../../../../../basic-info/basic-info.css";
+import "../../../../../basic-info/basic-info.css";
 
 export default function SearchMovieListHeader() {
   return (

@@ -3,7 +3,8 @@ import SearchGenre from "../components/search-genre-or-movie/components/search-g
 
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
-import SearchMovieList from "../components/search-genre-or-movie/components/search-movie/SearchMovieList";
+
+import GeneralSearchMovieList from "../components/search-genre-or-movie/components/search-movie/GeneralSearchMovieList";
 
 export default function SearchGenreOrMovie() {
   const { queryGenreMovie } = useContext(GlobalContext);
@@ -11,7 +12,7 @@ export default function SearchGenreOrMovie() {
     <>
       <Header />
       <SearchGenre queryGenre={queryGenreMovie} />
-      <SearchMovieList queryMovie={queryGenreMovie} />
+      <GeneralSearchMovieList queryMovie={queryGenreMovie} />
     </>
   );
 }

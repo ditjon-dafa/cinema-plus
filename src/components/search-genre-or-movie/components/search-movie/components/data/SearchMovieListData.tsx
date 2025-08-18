@@ -1,9 +1,10 @@
 import { MovieType } from "../../../../../../types";
 import SearchMovieListDisplay from "./components/SearchMovieListDisplay";
-import SearchMovieListHeader from "./components/SearchMovieListHeader";
+
 import { useContext } from "react";
 import { GlobalContext } from "../../../../../../context/GlobalContext";
 import "../../search-movie-list.css";
+import SearchMovieListHeader from "../header/SearchMovieListHeader";
 interface Props {
   movieList: Array<MovieType>;
 }

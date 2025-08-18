@@ -13,7 +13,7 @@ export default function SearchMovieList(props: Props) {
     data: movies,
     loading,
     error,
-  } = useSearchMovieFetch(props.queryMovie);
+  } = useSearchMovieFetch(props.queryMovie, 0);
 
   if (loading) {
     return <Loading />;

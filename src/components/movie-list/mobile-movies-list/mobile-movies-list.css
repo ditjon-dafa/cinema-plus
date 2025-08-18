@@ -1,35 +1,46 @@
 .page-parts,
-.genre-movies-pages {
+.genre-movies-pages,
+.search-movie-parts {
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-top: 0.5em;
 }
-
+.search-movie-parts {
+  padding: 0.5em 0;
+}
 .page-part {
   color: black;
   text-decoration: none;
 }
-.genre-movies-list {
+.genre-movies-list,
+.search-movie-part {
   text-decoration: none;
 }
 
 .page-part:hover,
 .genre-movies-list:hover,
+.search-movie-part:hover,
 .page-part.active,
-.genre-movies-list.active {
+.genre-movies-list.active,
+.search-movie-part.active {
   border-radius: 0.35em;
   padding: 0.3em;
 }
 
-.page-part.active,
-.genre-movies-list.active {
+.page-part.active {
   color: dodgerblue;
-  font-weight: bold;
   border: 0.05em solid dodgerblue;
 }
 
-.genre-movies-list.active {
+.page-part.active,
+.genre-movies-list.active,
+.search-movie-part.active {
+  font-weight: bold;
+}
+
+.genre-movies-list.active,
+.search-movie-part.active {
   border: 0.05em solid orange;
 }
 
@@ -39,7 +50,8 @@
     border: 0.05em solid dodgerblue;
   }
 
-  .genre-movies-list:hover {
+  .genre-movies-list:hover,
+  .search-movie-part:hover {
     border: 0.05em solid orange;
   }
 }
