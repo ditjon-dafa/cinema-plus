@@ -18,7 +18,7 @@ export default function SearchMovieListData(props: Props) {
           theme === "light" ? "rgb(240, 240, 240)" : "rgb(80, 80, 80)",
         color: theme === "light" ? "black" : "white",
       }}
-      className="search-movie-list-screen "
+      className="search-movie-list-screen"
     >
       <SearchMovieListHeader />
       <SearchMovieListDisplay searchMovieList={props.movieList} />

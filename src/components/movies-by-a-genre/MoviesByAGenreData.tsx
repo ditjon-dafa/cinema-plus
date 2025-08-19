@@ -7,7 +7,7 @@ import useMoviesByAGenreFetch from "../../hooks/useMoviesByAGenreFetch";
 import FeedbackMoviesByAGenre from "../../feedback-to-user/FeedbackMoviesByAGenre";
 import MoviesByAGenreDisplay from "./components/display/MoviesByAGenreDisplay";
 import "../favorites-movie-list/favorites-movie-list.css";
-import "../movie-list/mobile-movies-list/mobile-movies-list.css";
+import "../../App.css";
 
 import { Link } from "react-router-dom";
 

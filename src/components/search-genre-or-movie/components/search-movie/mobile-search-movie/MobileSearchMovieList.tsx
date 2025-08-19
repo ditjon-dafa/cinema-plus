@@ -7,7 +7,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { GlobalContext } from "../../../../../context/GlobalContext";
-import "../../../../movie-list/mobile-movies-list/mobile-movies-list.css";
+import "../../../../../App.css";
 
 interface Props {
   queryMovie: string;

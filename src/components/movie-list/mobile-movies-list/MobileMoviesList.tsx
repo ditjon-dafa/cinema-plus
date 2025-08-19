@@ -7,7 +7,7 @@ import Loading from "../../common/Loading";
 import Error from "../../common/Error";
 import PaginationDesign from "../../../lib/PaginationDesign";
 import "../movie-list.css";
-import "./mobile-movies-list.css";
+import "../../../App.css";
 
 export default function MobileMoviesList() {
   const { currentPage } = useContext(GlobalContext);
