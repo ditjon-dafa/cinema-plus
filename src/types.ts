@@ -2,7 +2,7 @@ export type ThemeType = "light" | "dark";
 
 export type PageType = number;
 
-export type PagePartType = 1 | 2;
+export type PagePartType = number;
 
 export type FavoritesType = Array<MovieType> | [];
 

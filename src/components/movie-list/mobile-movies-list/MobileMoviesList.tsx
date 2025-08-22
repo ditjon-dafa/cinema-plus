@@ -19,6 +19,17 @@ export default function MobileMoviesList() {
     pagePart
   );
 
+  const navItems = [
+    {
+      label: "Page Part 1",
+      path: "/",
+    },
+    {
+      label: "Page Part 2",
+      path: "/",
+    },
+  ];
+
   if (loading) {
     return <Loading />;
   }
@@ -59,33 +70,28 @@ export default function MobileMoviesList() {
         })}
       </div>
       <div className="page-parts">
-        <div
-          onClick={() => {
-            setPagePart(1);
-          }}
-        >
-          <Link
-            to="/"
-            className={pagePart == 1 ? "page-part active" : "page-part"}
-          >
-            {" "}
-            Page Part 1
-          </Link>
-        </div>
-        <div
-          onClick={() => {
-            setPagePart(2);
-          }}
-        >
-          <Link
-            to="/"
-            className={pagePart == 2 ? "page-part active" : "page-part"}
-          >
-            {" "}
-            Page Part 2
-          </Link>
-        </div>
+        {navItems.map((item) => {
+          const pagePartStr = item.label.substring(item.label.length - 1);
+          return (
+            <div key={item.label}>
+              <Link
+                onClick={() => {
+                  setPagePart(parseInt(pagePartStr));
+                }}
+                to={item.path}
+                className={
+                  pagePartStr == pagePart.toString()
+                    ? "page-part active"
+                    : "page-part"
+                }
+              >
+                {item.label}
+              </Link>
+            </div>
+          );
+        })}
       </div>
+
       <div>
         <PaginationDesign totalPages={totalPages} />
       </div>
