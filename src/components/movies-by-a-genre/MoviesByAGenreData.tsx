@@ -25,6 +25,21 @@ export default function MoviesByAGenreData() {
     genrePage
   );
 
+  const navItems = [
+    {
+      label: "Page 1",
+      path: `/movies-by-genre/${params.id}`,
+    },
+    {
+      label: "Page 2",
+      path: `/movies-by-genre/${params.id}`,
+    },
+    {
+      label: "Page 3",
+      path: `/movies-by-genre/${params.id}`,
+    },
+  ];
+
   if (loading) {
     return <Loading />;
   }
@@ -34,88 +49,54 @@ export default function MoviesByAGenreData() {
   }
 
   return (
-    <>
-      <div
-        className="movie-list-screen"
-        style={{
-          backgroundColor:
-            theme === "light" ? "rgb(240, 240, 240)" : "rgb(80, 80, 80)",
-        }}
-      >
-        <div>
-          {data == null ? (
-            <FeedbackMoviesByAGenre />
-          ) : (
-            <>
-              <MoviesByAGenreDisplay
-                genreId={params.id}
-                pageMoviesResults={data.results}
-              />
-            </>
-          )}
-        </div>
-        {pagesLength == 3 ? (
-          <div className="genre-movies-pages">
-            <div
-              onClick={() => {
-                setGenrePage(1);
-              }}
-            >
-              <Link
-                style={linkStyles}
-                to={`/movies-by-genre/${params.id}`}
-                className={
-                  genrePage == 1
-                    ? "genre-movies-list active"
-                    : "genre-movies-list"
-                }
-              >
-                {" "}
-                Page 1
-              </Link>
-            </div>
-            <div
-              onClick={() => {
-                setGenrePage(2);
-              }}
-            >
-              <Link
-                style={linkStyles}
-                to={`/movies-by-genre/${params.id}`}
-                className={
-                  genrePage == 2
-                    ? "genre-movies-list active"
-                    : "genre-movies-list"
-                }
-              >
-                {" "}
-                Page 2
-              </Link>
-            </div>
-            <div
-              onClick={() => {
-                setGenrePage(3);
-              }}
-            >
-              <Link
-                style={linkStyles}
-                to={`/movies-by-genre/${params.id}`}
-                className={
-                  genrePage == 3
-                    ? "genre-movies-list active"
-                    : "genre-movies-list"
-                }
-              >
-                {" "}
-                Page 3
-              </Link>
-            </div>
-          </div>
+    <div
+      className="movie-list-screen"
+      style={{
+        backgroundColor:
+          theme === "light" ? "rgb(240, 240, 240)" : "rgb(80, 80, 80)",
+      }}
+    >
+      <div>
+        {data == null ? (
+          <FeedbackMoviesByAGenre />
         ) : (
-          ""
+          <>
+            <MoviesByAGenreDisplay
+              genreId={params.id}
+              pageMoviesResults={data.results}
+            />
+          </>
         )}
-        ;
       </div>
-    </>
+      {pagesLength == 3 ? (
+        <div className="genre-movies-pages">
+          {navItems.map((item) => {
+            const genrePageStr = item.label.substring(item.label.length - 1);
+            return (
+              <div key={item.label}>
+                <Link
+                  onClick={() => {
+                    setGenrePage(parseInt(genrePageStr));
+                  }}
+                  style={linkStyles}
+                  to={item.path}
+                  className={
+                    genrePage == parseInt(genrePageStr)
+                      ? "genre-movies-list active"
+                      : "genre-movies-list"
+                  }
+                >
+                  {" "}
+                  {item.label}
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        ""
+      )}
+      ;
+    </div>
   );
 }
