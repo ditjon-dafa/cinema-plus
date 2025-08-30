@@ -2,22 +2,24 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { GlobalContext } from "../../../context/GlobalContext";
 import MovieCard from "../components/movie-card/MovieCard";
-import useMobileAllMoviesPageFetch from "../../../hooks/useMobileAllMoviesPageFetch";
 import Loading from "../../common/Loading";
 import Error from "../../common/Error";
 import PaginationDesign from "../../../lib/PaginationDesign";
 import "../movie-list.css";
 import "../../../App.css";
+import useAllMoviesPageFetch from "../../../hooks/useAllMoviesPageFetch";
 
 export default function MobileMoviesList() {
   const { currentPage } = useContext(GlobalContext);
   const { pagePart, setPagePart } = useContext(GlobalContext);
   const { theme } = useContext(GlobalContext);
 
-  const { movies, totalPages, loading, error } = useMobileAllMoviesPageFetch(
-    currentPage,
-    pagePart
-  );
+  const {
+    data: movies,
+    totalPages,
+    loading,
+    error,
+  } = useAllMoviesPageFetch(currentPage, pagePart);
 
   const navItems = [
     {

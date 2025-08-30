@@ -15,7 +15,7 @@ export default function MovieList() {
     totalPages,
     loading,
     error,
-  } = useAllMoviesPageFetch(currentPage);
+  } = useAllMoviesPageFetch(currentPage, 0);
 
   if (loading) {
     return <Loading />;
