@@ -6,6 +6,7 @@ import {
   SearchMovieType,
   QueryGenreMovieType,
   PagePartType,
+  SearchPagePartType,
   ModalType,
 } from "../types";
 
@@ -16,6 +17,8 @@ const defaultValue: {
   setCurrentPage: React.Dispatch<React.SetStateAction<PageType>>;
   pagePart: PagePartType;
   setPagePart: React.Dispatch<React.SetStateAction<PagePartType>>;
+  searchPagePart: SearchPagePartType;
+  setSearchPagePart: React.Dispatch<React.SetStateAction<SearchPagePartType>>;
   favorites: FavoritesType;
   setFavorites: React.Dispatch<React.SetStateAction<FavoritesType>>;
   searchMovie: SearchMovieType;
@@ -31,6 +34,8 @@ const defaultValue: {
   setCurrentPage: () => {},
   pagePart: 1,
   setPagePart: () => {},
+  searchPagePart: 1,
+  setSearchPagePart: () => {},
   favorites: [],
   setFavorites: () => {},
   searchMovie: [],

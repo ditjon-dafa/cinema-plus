@@ -3,7 +3,7 @@ import useSearchMovieFetch from "../../../../../hooks/useSearchMovieFetch";
 import Loading from "../../../../common/Loading";
 import Error from "../../../../common/Error";
 import SearchMovieListData from "../components/data/SearchMovieListData";
-import { useState } from "react";
+
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { GlobalContext } from "../../../../../context/GlobalContext";
@@ -18,12 +18,14 @@ export default function MobileSearchMovieList(props: Props) {
   const linkStyles = {
     color: theme === "light" ? "black" : "white",
   };
-  const [part, setPart] = useState(1);
+
+  const { searchPagePart, setSearchPagePart } = useContext(GlobalContext);
+
   const {
     data: movies,
     loading,
     error,
-  } = useSearchMovieFetch(props.queryMovie, part);
+  } = useSearchMovieFetch(props.queryMovie, searchPagePart);
 
   if (loading) {
     return <Loading />;
@@ -47,32 +49,34 @@ export default function MobileSearchMovieList(props: Props) {
         >
           <SearchMovieListData movieList={movies} />
           <div className="search-movie-parts">
-            <div
-              onClick={() => {
-                setPart(1);
-              }}
-            >
+            <div>
               <Link
+                onClick={() => {
+                  setSearchPagePart(1);
+                }}
                 style={linkStyles}
                 to="/search"
                 className={
-                  part == 1 ? "search-movie-part active" : "search-movie-part"
+                  searchPagePart == 1
+                    ? "search-movie-part active"
+                    : "search-movie-part"
                 }
               >
                 {" "}
                 Part 1
               </Link>
             </div>
-            <div
-              onClick={() => {
-                setPart(2);
-              }}
-            >
+            <div>
               <Link
+                onClick={() => {
+                  setSearchPagePart(2);
+                }}
                 style={linkStyles}
                 to="/search"
                 className={
-                  part == 2 ? "search-movie-part active" : "search-movie-part"
+                  searchPagePart == 2
+                    ? "search-movie-part active"
+                    : "search-movie-part"
                 }
               >
                 {" "}

@@ -4,6 +4,8 @@ export type PageType = number;
 
 export type PagePartType = number;
 
+export type SearchPagePartType = number;
+
 export type FavoritesType = Array<MovieType> | [];
 
 export type SearchMovieType = Array<MovieType> | [];

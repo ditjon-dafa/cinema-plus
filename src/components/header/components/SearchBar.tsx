@@ -8,13 +8,16 @@ import "./search-bar.css";
 export default function SearchBar() {
   const nav = useNavigate();
   const [query, setQuery] = useState<string>("");
+
   const { setQueryGenreMovie } = useContext(GlobalContext);
+  const { setSearchPagePart } = useContext(GlobalContext);
 
   type SearchProps = GetProps<typeof Input.Search>;
   const { Search } = Input;
 
   function search() {
     setQueryGenreMovie(query);
+    setSearchPagePart(1);
     nav("/search");
   }
 
@@ -28,7 +31,9 @@ export default function SearchBar() {
         placeholder="Genre or Movie"
         allowClear
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={(e) => {
+          setQuery(e.target.value);
+        }}
         onSearch={onSearch}
         id="search-input"
       />

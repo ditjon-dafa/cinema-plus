@@ -11,6 +11,7 @@ import {
   PageType,
   PagePartType,
   ModalType,
+  SearchPagePartType,
 } from "./types";
 
 import HomePage from "./pages/HomePage";
@@ -65,7 +66,7 @@ function App() {
   const [theme, setTheme] = useState<ThemeType>("dark");
   const [currentPage, setCurrentPage] = useState<PageType>(1);
   const [pagePart, setPagePart] = useState<PagePartType>(1);
-
+  const [searchPagePart, setSearchPagePart] = useState<SearchPagePartType>(1);
   const [favorites, setFavorites] = useState<FavoritesType>(
     favoritesFromLocalStorage
   );
@@ -87,6 +88,8 @@ function App() {
         setCurrentPage,
         pagePart,
         setPagePart,
+        searchPagePart,
+        setSearchPagePart,
         favorites,
         setFavorites,
         searchMovie,

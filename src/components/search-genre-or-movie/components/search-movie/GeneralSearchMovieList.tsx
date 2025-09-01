@@ -1,5 +1,4 @@
 import useWindowResize from "../../../../hooks/useWindowResize";
-
 import MobileSearchMovieList from "./mobile-search-movie/MobileSearchMovieList";
 import SearchMovieList from "./SearchMovieList";
 interface Props {
