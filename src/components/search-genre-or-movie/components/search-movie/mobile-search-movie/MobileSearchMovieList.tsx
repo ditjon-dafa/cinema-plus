@@ -27,6 +27,17 @@ export default function MobileSearchMovieList(props: Props) {
     error,
   } = useSearchMovieFetch(props.queryMovie, searchPagePart);
 
+  const navItems = [
+    {
+      label: "Part 1",
+      path: "/",
+    },
+    {
+      label: "Part 2",
+      path: "/",
+    },
+  ];
+
   if (loading) {
     return <Loading />;
   }
@@ -49,40 +60,27 @@ export default function MobileSearchMovieList(props: Props) {
         >
           <SearchMovieListData movieList={movies} />
           <div className="search-movie-parts">
-            <div>
-              <Link
-                onClick={() => {
-                  setSearchPagePart(1);
-                }}
-                style={linkStyles}
-                to="/search"
-                className={
-                  searchPagePart == 1
-                    ? "search-movie-part active"
-                    : "search-movie-part"
-                }
-              >
-                {" "}
-                Part 1
-              </Link>
-            </div>
-            <div>
-              <Link
-                onClick={() => {
-                  setSearchPagePart(2);
-                }}
-                style={linkStyles}
-                to="/search"
-                className={
-                  searchPagePart == 2
-                    ? "search-movie-part active"
-                    : "search-movie-part"
-                }
-              >
-                {" "}
-                Part 2
-              </Link>
-            </div>
+            {navItems.map((item) => {
+              const pagePartStr = item.label.substring(item.label.length - 1);
+              return (
+                <div key={item.label}>
+                  <Link
+                    onClick={() => {
+                      setSearchPagePart(parseInt(pagePartStr));
+                    }}
+                    style={linkStyles}
+                    to="/search"
+                    className={
+                      searchPagePart == parseInt(pagePartStr)
+                        ? "search-movie-part active"
+                        : "search-movie-part"
+                    }
+                  >
+                    {item.label}
+                  </Link>
+                </div>
+              );
+            })}
           </div>
         </div>
       )}
