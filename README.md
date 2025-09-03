@@ -18,7 +18,7 @@ If the empty heart in a Movie Card is clicked, the movie is added to the list of
 
 ### Search bar
 
-In the search bar, it is possible to search for a movie or a genre simultaneously.
+In the search bar, it is possible to search for a movie or a genre simultaneously. The search movie results can be browsed by pagination on the mobile screen.
 
 ### Theme mode
 
@@ -30,7 +30,7 @@ The app has the Responsive Web Design feature.
 
 ## Acknowledgments
 
-The app based on React with TypeScript is powered by Vite. The movie information was possible to be displayed by the Movie DB API.
-Axios helped to get the movies data from the Movie DB, while React Router made possible Routing.
+The app based on React with TypeScript is powered by Vite. The movies information together with the list of genres was possible to be displayed by the Movie DB API.
+Axios helped to get the movies and genres data from the Movie DB, while React Router made possible Routing.
 Ant Design added some relevant functionality to the app such as Pagination (the movies fetched at home page), SearchBar, Add/Remove favorite movie etc.
 React Hook Form together with Ant Design made possible the simulation of reserving a movie.
