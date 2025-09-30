@@ -9,7 +9,13 @@ function Error() {
         alignItems: "center",
       }}
     >
-      Something went wrong!
+      <p>
+        Until now the project is tested on :
+        <ul>
+          <li>Wi-Fi</li>{" "}
+          <li>Mobile Data - only on iPhone, Vodafone Albania </li>
+        </ul>
+      </p>
     </div>
   );
 }
