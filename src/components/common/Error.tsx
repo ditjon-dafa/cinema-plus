@@ -10,7 +10,7 @@ function Error() {
       }}
     >
       <p>
-        Until now the project is tested on :
+        The project is tested on :
         <ul>
           <li>Wi-Fi</li>{" "}
           <li>Mobile Data - only on iPhone, Vodafone Albania </li>
