@@ -2,6 +2,22 @@
 
 Cinema + is a Front-End Web App based on React with TypeScript.
 
+## Cinema app facilities for potential movie watchers
+
+- Movie information display on the behalf of a cinema means informing a potential
+  cinema watcher about a movie. It influence in making a faithful decision of
+  watching a movie offered by that cinema, before being there.
+- The potential movie watcher has the possibility to save a (some) movie(s) for later
+  review, if the watcher does not have much time at the moment.
+- Movie booking is helpful for a movie watcher, being on time to find fast one (some)
+  seat(s) at the cinema to watch a certain movie.
+
+## My experience in the development of this project
+
+1. During this project I practiced using React Hooks such as form validation ( React Hook Form ), managing state ( ex favorite movies ), fetching the list of top rated movies and paginating it, helped by useEffect.
+2. I used REST API to fetch data ( ex. the list of top rated movies ).
+3. I used mobile-first design principle like: dividing the list of top-rated movies into two parts, only for the small screen devices. I used CSS grid and flex for the display layout. Through media screen, I made web app screen adaptation possible. Finally, I tested the web app on large and small screen devices.
+
 ## Business logic
 
 ### Home page
@@ -27,16 +43,6 @@ In the app, it is possible to switch between Light Mode and Dark Mode.
 ## Responsive Web Design
 
 The app has the Responsive Web Design feature.
-
-## Cinema app facilities for potential movie watchers
-
-- Movie information display on the behalf of a cinema means informing a potential
-  cinema watcher about a movie. It influence in making a faithful decision of
-  watching a movie offered by that cinema, before being there.
-- The potential movie watcher has the possibility to save a (some) movie(s) for later
-  review, if the watcher does not have much time at the moment.
-- Movie booking is helpful for a movie watcher, being on time to find fast one (some)
-  seat(s) at the cinema to watch a certain movie.
 
 ## Acknowledgments
 
