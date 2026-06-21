@@ -2,6 +2,10 @@
 
 Cinema + is a Front-End Web App based on React with TypeScript.
 
+The project gives advantages to a customer by reviewing, bookmarking and booking a movie.
+
+You can view a sample demo [here](https://drive.google.com/file/d/1DweU8fpkan_hGzhhJQMN-7Z7vizk7lTM/view?usp=embed_facebook) or if you prefer, you can explore the project [here](https://cinema-plus-11-8-25.vercel.app/).
+
 ## Cinema app facilities for potential movie watchers
 
 - Movie information display on the behalf of a cinema means informing a potential
