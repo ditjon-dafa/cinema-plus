@@ -1,4 +1,4 @@
-# Cinema +
+# :movie_camera: Cinema +
 
 Cinema + is a Front-End Web App based on React with TypeScript.
 
@@ -6,7 +6,7 @@ The project gives advantages to a customer by reviewing, bookmarking and booking
 
 You can view a sample demo [here](https://drive.google.com/file/d/1DweU8fpkan_hGzhhJQMN-7Z7vizk7lTM/view?usp=embed_facebook) or if you prefer, you can explore the project [here](https://cinema-plus-11-8-25.vercel.app/).
 
-## Cinema app facilities for potential movie watchers
+## :sparkles: Cinema app facilities for potential movie watchers
 
 - Movie information display on the behalf of a cinema means informing a potential
   cinema watcher about a movie. It influence in making a faithful decision of
@@ -16,13 +16,13 @@ You can view a sample demo [here](https://drive.google.com/file/d/1DweU8fpkan_hG
 - Movie booking is helpful for a movie watcher, being on time to find fast one (some)
   seat(s) at the cinema to watch a certain movie.
 
-## My experience in the development of this project
+## :rocket: My experience in the development of this project
 
 1. During this project I practiced using React Hooks such as form validation ( React Hook Form ), managing state ( ex favorite movies ), fetching the list of top rated movies and paginating it, helped by useEffect.
 2. I used REST API to fetch data ( ex. the list of top rated movies ).
 3. I used mobile-first design principle like: dividing the list of top-rated movies into two parts, only for the small screen devices. I used CSS grid and flex for the display layout. Through media screen, I made web app screen adaptation possible. Finally, I tested the web app on large and small screen devices.
 
-## Business logic
+## :gear: Business logic
 
 ### Home page
 
@@ -44,11 +44,11 @@ In the search bar, it is possible to search for a movie or a genre simultaneousl
 
 In the app, it is possible to switch between Light Mode and Dark Mode.
 
-## Responsive Web Design
+## :iphone: Responsive Web Design
 
 The app has the Responsive Web Design feature.
 
-## Acknowledgments
+## :handshake: Acknowledgments
 
 The app based on React with TypeScript is powered by Vite. The movies information together with the list of genres was possible to be displayed by the Movie DB API.
 Axios helped to get the movies and genres data from the Movie DB, while React Router made possible Routing.
