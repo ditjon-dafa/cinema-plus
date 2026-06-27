@@ -1,10 +1,52 @@
 # :movie_camera: Cinema +
 
 Cinema + is a Front-End Web App based on React with TypeScript.
+The project facilitate customers by reviewing, bookmarking and booking a movie.
 
-The project gives advantages to a customer by reviewing, bookmarking and booking a movie.
+## :dart: Features
 
-You can view a sample demo [here](https://drive.google.com/file/d/1DweU8fpkan_hGzhhJQMN-7Z7vizk7lTM/view?usp=embed_facebook) or if you prefer, you can explore the project [here](https://cinema-plus-11-8-25.vercel.app/).
+- Top rated movies: Fetching data using REST API.
+- Single movie: After the user fetches the list of top rated movies, if clicking on a movie, the detailed information of the movie is displayed, matched by the movie `params`.
+- React Hooks:
+  1. The use of React Hooks is seen when the user fetches the list of top rated movies from the Movie DB, and browse pages, made possible with the help of `useEffect`.
+  2. When the user save or unsave a movie, the user is managing the state of movie.
+  3. When the user try to book a movie, the form is validated according to React Hook Form.
+  4. User can `query` simultaneously a genre or a movie, thanks to the use of `useContext` hook.
+- Mobile-first design principle:
+  1. For the small screen, when a user fetches the list of top-rated movies, the list is displayed in two parts for code optimization and a nice user experience.
+  2. With `CSS grid` ,`flex`, and `media screen` the user can view the appropriate layout according to the screen width.
+
+## :rocket: Getting started
+
+### Tech Stack
+
+- Node.js: Minimum required is version 18, but recommended at least version 22
+- React: JavaScript library for building user interfaces
+- TypeScript: Safe Data Type Check
+- Axios: Fetch data from the Movie DB
+- React Hook Form: Booking Form validation
+- CSS: Custom styling
+
+### Installation
+
+To run the project locally follow these steps:
+
+1. Clone the repository:
+   `git clone https://github.com/ditjon-dafa/cinema-plus.git`
+
+2. Navigate into the project directory:
+
+`cd cinema-plus`
+
+3. Install the neccessary dependencies:
+
+`npm install`
+
+4. Run the project
+
+`npm run dev `
+
+You can also view a sample demo [here](https://drive.google.com/file/d/1DweU8fpkan_hGzhhJQMN-7Z7vizk7lTM/view?usp=embed_facebook).
 
 ## :sparkles: Cinema app facilities for potential movie watchers
 
@@ -15,38 +57,6 @@ You can view a sample demo [here](https://drive.google.com/file/d/1DweU8fpkan_hG
   review, if the watcher does not have much time at the moment.
 - Movie booking is helpful for a movie watcher, being on time to find fast one (some)
   seat(s) at the cinema to watch a certain movie.
-
-## :rocket: My experience in the development of this project
-
-1. During this project I practiced using React Hooks such as form validation ( React Hook Form ), managing state ( ex favorite movies ), fetching the list of top rated movies and paginating it, helped by useEffect.
-2. I used REST API to fetch data ( ex. the list of top rated movies ).
-3. I used mobile-first design principle like: dividing the list of top-rated movies into two parts, only for the small screen devices. I used CSS grid and flex for the display layout. Through media screen, I made web app screen adaptation possible. Finally, I tested the web app on large and small screen devices.
-
-## :gear: Business logic
-
-### Home page
-
-The home page shows a list of top-rated movies, browsed by pagination, enhanced also for mobile screen. When a Movie Card is clicked, the single movie information is displayed. The single movie has its genres it belongs. When a genre is clicked a list of movies of that genre is displayed. While being in the single movie page, a simulation process of booking that movie can be realized.
-
-### Movies by genre
-
-The Movies by genre page displays a list of disponible genres. If a Genre Card is clicked, a list of movies that belong to that genre is displayed. The list of genre movies is not a match of all the top-rated movies, as it is not available to be fetched. The list of genre movies is just for demonstration purposes and to match the genres at the single movie information. The Genre Drama has pagination, because there are too many movies in the list.
-
-### My favorites
-
-If the empty heart in a Movie Card is clicked, the movie is added to the list of My favorite's movies (My favorite page). If the filled heart is clicked, the movie is not favorite anymore and it is removed from the list of My favorite's movies (My favorite page).
-
-### Search bar
-
-In the search bar, it is possible to search for a movie or a genre simultaneously. The search movie results can be browsed by pagination on the mobile screen.
-
-### Theme mode
-
-In the app, it is possible to switch between Light Mode and Dark Mode.
-
-## :iphone: Responsive Web Design
-
-The app has the Responsive Web Design feature.
 
 ## :handshake: Acknowledgments
 
