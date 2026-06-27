@@ -32,7 +32,8 @@ The project facilitate customers by reviewing, bookmarking and booking a movie.
 To run the project locally follow these steps:
 
 1. Clone the repository:
-   `git clone https://github.com/ditjon-dafa/cinema-plus.git`
+
+`git clone https://github.com/ditjon-dafa/cinema-plus.git`
 
 2. Navigate into the project directory:
 
