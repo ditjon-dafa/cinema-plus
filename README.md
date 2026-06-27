@@ -5,14 +5,14 @@ The project facilitate customers by reviewing, bookmarking and booking a movie.
 
 ## :dart: Features
 
-- Top rated movies: Fetching data using REST API.
-- Single movie: After the user fetches the list of top rated movies, if clicking on a movie, the detailed information of the movie is displayed, matched by the movie `params`.
-- React Hooks:
+- **Top rated movies:** Fetching data using REST API.
+- **Single movie:** After the user fetches the list of top rated movies, if clicking on a movie, the detailed information of the movie is displayed, matched by the movie `params`.
+- **React Hooks:**
   1. The use of React Hooks is seen when the user fetches the list of top rated movies from the Movie DB, and browse pages, made possible with the help of `useEffect`.
   2. When the user save or unsave a movie, the user is managing the state of movie.
   3. When the user try to book a movie, the form is validated according to React Hook Form.
   4. User can `query` simultaneously a genre or a movie, thanks to the use of `useContext` hook.
-- Mobile-first design principle:
+- **Mobile-first design principle:**
   1. For the small screen, when a user fetches the list of top-rated movies, the list is displayed in two parts for code optimization and a nice user experience.
   2. With `CSS grid` ,`flex`, and `media screen` the user can view the appropriate layout according to the screen width.
 
@@ -20,12 +20,12 @@ The project facilitate customers by reviewing, bookmarking and booking a movie.
 
 ### Tech Stack
 
-- Node.js: Minimum required is version 18, but recommended at least version 22
-- React: JavaScript library for building user interfaces
-- TypeScript: Safe Data Type Check
-- Axios: Fetch data from the Movie DB
-- React Hook Form: Booking Form validation
-- CSS: Custom styling
+- **Node.js:** Minimum required is version 18, but recommended at least version 22
+- **React:** JavaScript library for building user interfaces
+- **TypeScript:** Safe Data Type Check
+- **Axios:** Fetch data from the Movie DB
+- **React Hook Form:** Booking Form validation
+- **CSS:** Custom styling
 
 ### Installation
 
