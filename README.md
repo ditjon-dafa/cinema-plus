@@ -1,6 +1,6 @@
 # :movie_camera: Cinema +
 
-Cinema + is a Front-End Web App based on React with TypeScript.
+Cinema + is a Front-End Web App based on React with TypeScript.\
 The project facilitate customers by reviewing, bookmarking and booking a movie.
 
 ## :dart: Features
