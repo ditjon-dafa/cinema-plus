@@ -33,19 +33,27 @@ To run the project locally follow these steps:
 
 1. Clone the repository:
 
-`git clone https://github.com/ditjon-dafa/cinema-plus.git`
+````bash
+git clone https://github.com/ditjon-dafa/cinema-plus.git```
+````
 
 2. Navigate into the project directory:
 
-`cd cinema-plus`
+```bash
+cd cinema-plus
+```
 
 3. Install the neccessary dependencies:
 
-`npm install`
+```bash
+npm install
+```
 
 4. Run the project
 
-`npm run dev `
+```bash
+npm run dev
+```
 
 You can also view a sample demo [here](https://drive.google.com/file/d/1DweU8fpkan_hGzhhJQMN-7Z7vizk7lTM/view?usp=embed_facebook).
 
