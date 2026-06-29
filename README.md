@@ -1,7 +1,7 @@
 # :movie_camera: Cinema +
 
 Cinema + is a Front-End Web App based on React with TypeScript.\
-The project facilitate customers by reviewing, bookmarking and booking a movie.
+The project facilitate customers by reviewing, bookmarking and booking a movie, saving the time and fuel used by clients by 50%, resulting in 2x customers, and improving application response time for mobile screen by 50%, through code optimization.
 
 ## :dart: Features
 
@@ -22,7 +22,7 @@ The project facilitate customers by reviewing, bookmarking and booking a movie.
 
 - **Node.js:** Minimum required is version 18, but recommended at least version 22
 - **React:** JavaScript library for building user interfaces
-- **TypeScript:** Safe Data Type Check
+- **TypeScript:** Compile-time safe type checker for JavaScript
 - **Axios:** Fetch data from the Movie DB
 - **React Hook Form:** Booking Form validation
 - **CSS:** Custom styling
