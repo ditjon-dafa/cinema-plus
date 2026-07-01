@@ -43,7 +43,7 @@ git clone https://github.com/ditjon-dafa/cinema-plus.git
 cd cinema-plus
 ```
 
-3. Install the neccessary dependencies:
+3. Install the necessary dependencies:
 
 ```
 npm install
@@ -71,5 +71,5 @@ You can also view a sample demo [here](https://drive.google.com/file/d/1DweU8fpk
 
 The app based on React with TypeScript is powered by Vite. The movies information together with the list of genres was possible to be displayed by the Movie DB API.
 Axios helped to get the movies and genres data from the Movie DB, while React Router made possible Routing.
-Ant Design added some relevant functionality to the app such as Pagination (the movies fetched at home page), SearchBar, Add/Remove favorite movie etc.
+Ant Design added some relevant functionality to the app such as Pagination (the movies fetched at home page), SearchBar, Add/Remove favourite movie etc.
 React Hook Form together with Ant Design made possible the simulation of reserving a movie.
